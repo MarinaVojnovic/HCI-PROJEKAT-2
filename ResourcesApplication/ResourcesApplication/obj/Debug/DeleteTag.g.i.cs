@@ -9,6 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using HCI_Manifestations.Help;
+using HCI_Manifestations.dialogs;
+using ResourceValidation.Validation;
 using ResourcesApplication;
 using System;
 using System.Diagnostics;
@@ -30,6 +33,7 @@ using System.Windows.Media.TextFormatting;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Shell;
+using Xceed.Wpf.Toolkit;
 
 
 namespace ResourcesApplication {

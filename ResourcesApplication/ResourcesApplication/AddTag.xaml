@@ -9,7 +9,7 @@
         xmlns:validation="clr-namespace:ResourceValidation.Validation"
         xmlns:help="clr-namespace:HCI_Manifestations.Help"
         mc:Ignorable="d"
-        Title="Dodavanje etikete" Height="350" Width="500" Icon="../../Resources/Icons/favicon.ico"
+        Title="Dodavanje etikete" Height="350" Width="500" 
         ResizeMode="NoResize">
 
         <Window.CommandBindings>
