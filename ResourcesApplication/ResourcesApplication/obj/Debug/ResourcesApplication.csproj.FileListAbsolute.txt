@@ -11,3 +11,20 @@ C:\Users\Leona\Desktop\GIT HCI\HCI-PROJEKAT-2\ResourcesApplication\ResourcesAppl
 C:\Users\Leona\Desktop\GIT HCI\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\App.g.cs
 C:\Users\Leona\Desktop\GIT HCI\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\ResourcesApplication_MarkupCompile.cache
 C:\Users\Leona\Desktop\GIT HCI\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\ResourcesApplication_MarkupCompile.lref
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\ResourcesApplication.csprojResolveAssemblyReference.cache
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\DeleteTag.g.cs
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\MainWindow.g.cs
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\App.g.cs
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\ResourcesApplication_MarkupCompile.cache
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\ResourcesApplication_MarkupCompile.lref
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\ResourcesApplication.exe.config
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\ResourcesApplication.exe
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\ResourcesApplication.pdb
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\DeleteTag.baml
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\MainWindow.baml
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\ResourcesApplication.g.resources
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\ResourcesApplication.Properties.Resources.resources
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\ResourcesApplication.csproj.GenerateResource.cache
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\ResourcesApplication.csproj.CoreCompileInputs.cache
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\ResourcesApplication.exe
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\ResourcesApplication.pdb
