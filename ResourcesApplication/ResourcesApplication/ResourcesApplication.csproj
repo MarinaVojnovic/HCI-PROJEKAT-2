@@ -63,6 +63,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Beans\Database.cs" />
+    <Compile Include="Beans\DeserializationService.cs" />
+    <Compile Include="Beans\Resource.cs" />
+    <Compile Include="Beans\ResourceTag.cs" />
+    <Compile Include="Beans\ResourceType.cs" />
+    <Compile Include="Beans\SerializationService.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

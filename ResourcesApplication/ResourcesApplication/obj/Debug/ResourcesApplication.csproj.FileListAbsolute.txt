@@ -1,1 +1,6 @@
 C:\Users\Leona\Desktop\HCINasProjekat2\ResourcesApplication\ResourcesApplication\bin\Debug\ResourcesApplication.exe.config
+C:\Users\Leona\Desktop\HCINasProjekat2\ResourcesApplication\ResourcesApplication\obj\Debug\ResourcesApplication.csprojResolveAssemblyReference.cache
+C:\Users\Leona\Desktop\HCINasProjekat2\ResourcesApplication\ResourcesApplication\obj\Debug\MainWindow.g.cs
+C:\Users\Leona\Desktop\HCINasProjekat2\ResourcesApplication\ResourcesApplication\obj\Debug\App.g.cs
+C:\Users\Leona\Desktop\HCINasProjekat2\ResourcesApplication\ResourcesApplication\obj\Debug\ResourcesApplication_MarkupCompile.cache
+C:\Users\Leona\Desktop\HCINasProjekat2\ResourcesApplication\ResourcesApplication\obj\Debug\ResourcesApplication_MarkupCompile.lref

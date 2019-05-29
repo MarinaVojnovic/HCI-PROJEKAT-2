@@ -6,7 +6,170 @@
         xmlns:local="clr-namespace:ResourcesApplication"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+    <DockPanel>
+
+        <Menu DockPanel.Dock ="Top">
+            <Menu.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <DockPanel HorizontalAlignment="Stretch"></DockPanel>
+                </ItemsPanelTemplate>
+            </Menu.ItemsPanel>
+            <MenuItem Header="_Manifestacija" ToolTip="Prikaz svih opcija za uređivanje manifestacija">
+                <MenuItem Header="_Dodaj manifestaciju" ToolTip="Dodavanje nove manifestacije" Command="commands:RoutedCommands.AddManifestation" InputGestureText="Ctrl+M">
+                    <MenuItem.Icon>
+                        <Image Source="Resources\Icons\add.png" Width="12" Height="12"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="_Prikaži manifestacije" ToolTip="Prikaz svih manifestacija" Command="commands:RoutedCommands.ShowManifestations" InputGestureText="Alt+M">
+                    <MenuItem.Icon>
+                        <Image Source="Resources\Icons\show_table.png" Width="12" Height="12"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Tip manifestacije" ToolTip="Prikaz svih opcija za uređivanje tipova manifestacija">
+                <MenuItem Header="_Dodaj tip manifestacije" ToolTip="Dodavanje novog tipa manifestacije" Command="commands:RoutedCommands.AddType" InputGestureText="Ctrl+T">
+                    <MenuItem.Icon>
+                        <Image Source="Resources\Icons\add.png" Width="12" Height="12"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="_Prikaži tipove manifestacija" ToolTip="Prikaz svih tipova manifestacija" Command="commands:RoutedCommands.ShowTypes" InputGestureText="Alt+T">
+                    <MenuItem.Icon>
+                        <Image Source="Resources\Icons\show_table.png" Width="12" Height="12"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Etikete" ToolTip="Prikaz svih opcija za uređivanje etiketa">
+                <MenuItem Header="_Dodaj etiketu" ToolTip="Dodavanje nove etikete" Command="commands:RoutedCommands.AddTag" InputGestureText="Ctrl+E">
+                    <MenuItem.Icon>
+                        <Image Source="Resources\Icons\add.png" Width="12" Height="12"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="_Prikaži etikete" ToolTip="Prikaz svih etiketa" Command="commands:RoutedCommands.ShowTags" InputGestureText="Alt+E">
+                    <MenuItem.Icon>
+                        <Image Source="Resources\Icons\show_table.png" Width="12" Height="12"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Pomoć" ToolTip="Prikaz pomoćne dokumentacije" HorizontalAlignment="Right">
+                <MenuItem Header="_Dokumentacija" InputGestureText="F1" Click="Help_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Resources\Icons\document.png" Width="12" Height="12"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Name="Demo" Header="_Demo mod" Click="Demo_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Resources\Icons\demo_play.png" Width="12" Height="12"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+
+        <Grid DockPanel.Dock="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="335*"/>
+                <ColumnDefinition Width="187*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--Background canvas-->
+            <Canvas Name="Map" AllowDrop="True" Mouse.PreviewMouseDown="Map_PreviewMouseLeftButtonDown" MouseRightButtonDown="Map_MouseRightButtonDown" MouseMove="Map_MouseMove" DragEnter="Map_DragEnter" Drop="Map_Drop" Margin="-5,-1,5,1" Grid.ColumnSpan="2">
+                <Canvas.Background>
+                    <ImageBrush ImageSource="Resources\Images\sv2.png" AlignmentX="Left" AlignmentY="Top" Stretch="None"/>
+                </Canvas.Background>
+                <Canvas.ContextMenu>
+                    <ContextMenu Name="contextMenu">
+                        <MenuItem Header="Ažuriraj manifestaciju" Click="UpdateManifestation_Click">
+                            <MenuItem.Icon>
+                                <Image Source="Resources\Icons\edit.png" Height="15" Width="15" HorizontalAlignment="Left"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="Ukloni prikaz manifestacije" Click="RemoveManifestationIcon_Click">
+                            <MenuItem.Icon>
+                                <Image Source="Resources\Icons\cancel.png" Height="15" Width="15" HorizontalAlignment="Left"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="Obriši manifestaciju" Click="DeleteManifestation_Click">
+                            <MenuItem.Icon>
+                                <Image Source="Resources\Icons\delete.png" Height="15" Width="15" HorizontalAlignment="Left"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </ContextMenu>
+                </Canvas.ContextMenu>
+            </Canvas>
+
+            <StackPanel HorizontalAlignment="Right" Background="{StaticResource White}" Orientation="Vertical" Width="200" Height="578" VerticalAlignment="Top" Grid.Column="1" Margin="0,0,0,-25">
+
+                <!--Manifestation Actions-->
+                <Button Name="buttonAddManifestation" Command="commands:RoutedCommands.AddManifestation" Opacity="1" ToolTip="Dodavanje nove manifestacije" Margin="5" Padding="3" >
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="Resources\Icons\add.png" Height="15" Width="15" HorizontalAlignment="Left"/>
+                        <TextBlock Text="Nova manifestacija" VerticalAlignment="Center" HorizontalAlignment="Right" Padding="3"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Name="buttonViewManifestations" Command="commands:RoutedCommands.ShowManifestations" ToolTip="Prikaz svih manifestacija" Margin="5" Padding="3">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="Resources\Icons\show_table.png" Height="15" Width="15" HorizontalAlignment="Left"/>
+                        <TextBlock Text="Prikaži manifestacije" VerticalAlignment="Center" HorizontalAlignment="Right" Padding="3"/>
+                    </StackPanel>
+                </Button>
+
+                <Separator></Separator>
+
+                <!--Types Actions-->
+                <Button Name="buttonAddManifestationType" Command="commands:RoutedCommands.AddType" ToolTip="Dodavanje novog tipa manifestacije"  Margin="5" Padding="3">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="Resources\Icons\add.png" Height="15" Width="15" HorizontalAlignment="Left"/>
+                        <TextBlock Text="Novi tip" VerticalAlignment="Center" HorizontalAlignment="Right" Padding="3"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Name="buttonViewManifestationTypes" Command="commands:RoutedCommands.ShowTypes" ToolTip="Prikaz svih tipova manifestacija" Margin="5" Padding="3">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="Resources\Icons\show_table.png" Height="15" Width="15" HorizontalAlignment="Left"/>
+                        <TextBlock Text="Prikaži tipove" VerticalAlignment="Center" HorizontalAlignment="Right" Padding="3"/>
+                    </StackPanel>
+                </Button>
+
+                <Separator></Separator>
+
+                <!--Tags Actions-->
+                <Button Name="buttonAddTag" Command="commands:RoutedCommands.AddTag" ToolTip="Dodavanje nove etikete"  Margin="5" Padding="3">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="Resources\Icons\add.png" Height="15" Width="15" HorizontalAlignment="Left"/>
+                        <TextBlock Text="Nova etiketa" VerticalAlignment="Center" HorizontalAlignment="Right" Padding="3"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Name="buttonViewTags" Command="commands:RoutedCommands.ShowTags" ToolTip="Prikaz svih etiketa" Margin="5" Padding="3">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="Resources\Icons\show_table.png" Height="15" Width="15" HorizontalAlignment="Left"/>
+                        <TextBlock Text="Prikaži etikete" VerticalAlignment="Center" HorizontalAlignment="Right" Padding="3"/>
+                    </StackPanel>
+                </Button>
+
+                <Separator></Separator>
+
+                <GroupBox ToolTip="Lista manifestacija spremnih za prenošenje njihovih grafičkih predstava na mapu" Header="Manifestacije" Height="275" Margin="10,0" Foreground="White">
+                    <ListView Name="listView" ItemsSource="{Binding Manifestations}" PreviewMouseLeftButtonDown="ListView_PreviewMouseLeftButtonDown" MouseMove="ListView_MouseMove">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <WrapPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="{Binding IconPath}" Height="15" Width="15" Margin="0,0,5,0" HorizontalAlignment="Left"/>
+                                        <TextBlock Text="{Binding Id}" FontWeight="Bold" />
+                                    </StackPanel>
+                                </WrapPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </GroupBox>
+
+            </StackPanel>
+
+        </Grid>
+
+    </DockPanel>
 </Window>
