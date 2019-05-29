@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace ResourcesApplication.Beans
 {
     [Serializable]
@@ -43,7 +44,7 @@ namespace ResourcesApplication.Beans
         }
 
         private ObservableCollection<ResourceTag> tags;
-        private static object DeserializationService;
+        public static DeserializationService DeserialiationService { get; set; }
 
         public ObservableCollection<ResourceTag> Tags
         {
@@ -58,7 +59,7 @@ namespace ResourcesApplication.Beans
             }
         }
 
-        public static object SerializationService { get; private set; }
+        public static SerializationService SerializationService{ get; set; }
 
         private Database()
         {

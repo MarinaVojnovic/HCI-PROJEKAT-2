@@ -15,7 +15,7 @@ namespace ResourcesApplication.Beans
         public static readonly string RESOURCES_DATA = "resources.txt";
         public static readonly string TYPES_DATA = "types.txt";
         public static readonly string TAGS_DATA = "tags.txt";
-        public static void deserializeManifestations()
+        public static void deserializeResources()
         {
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = null;

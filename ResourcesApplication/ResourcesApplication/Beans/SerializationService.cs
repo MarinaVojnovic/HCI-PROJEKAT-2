@@ -15,7 +15,8 @@ namespace ResourcesApplication.Beans
         public static readonly string RESOURCES_DATA = "resources.txt";
         public static readonly string TYPES_DATA = "types.txt";
         public static readonly string TAGS_DATA = "tags.txt";
-        public static void serializeManifestations(ObservableCollection<Resource> resource)
+
+        public static void serializeResource(ObservableCollection<Resource> resource)
         {
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = null;
