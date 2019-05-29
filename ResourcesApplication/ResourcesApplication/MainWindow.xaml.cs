@@ -36,5 +36,11 @@ namespace ResourcesApplication
             AddResourceType type = new AddResourceType();
             type.Show();
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            AddResource type = new AddResource();
+            type.Show();
+        }
     }
 }

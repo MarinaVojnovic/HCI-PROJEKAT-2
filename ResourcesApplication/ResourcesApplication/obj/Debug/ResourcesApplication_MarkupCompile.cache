@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\
+C:\Users\Korisnik\Desktop\SONJA HCI\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\
 ResourcesApplication
 none
 false
 DEBUG;TRACE
-C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\App.xaml
-4-855734350
+C:\Users\Korisnik\Desktop\SONJA HCI\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\App.xaml
+6-579635001
 
-18-306761560
-13738642453
-AddTag.xaml;AddResourceType.xaml;DeleteTag.xaml;MainWindow.xaml;
+20-1817586784
+22-422677103
+AddResource.xaml;AddTag.xaml;AddResourceType.xaml;DeleteTag.xaml;EditTag.xaml;MainWindow.xaml;
 
 False
 
