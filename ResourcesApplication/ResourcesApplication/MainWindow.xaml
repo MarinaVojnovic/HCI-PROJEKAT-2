@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <DockPanel>
+        <Button x:Name="button" Content="Button" Height="319" VerticalAlignment="Top" Width="75" Click="Button_Click2" />
 
     </DockPanel>
 </Window>
