@@ -24,5 +24,17 @@ namespace ResourcesApplication
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            AddTag addTag = new AddTag();
+            addTag.Show();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            AddResourceType type = new AddResourceType();
+            type.Show();
+        }
     }
 }

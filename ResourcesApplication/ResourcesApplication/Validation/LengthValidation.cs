@@ -5,11 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using ResourcesApplication.Beans;
-
-
 namespace ResourcesApplication.Validation
 {
-
     public class LengthValidation : ValidationRule
     {
         public int Min { get; set; }

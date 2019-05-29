@@ -6,7 +6,13 @@
         xmlns:local="clr-namespace:ResourcesApplication"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
+    <Window.CommandBindings>
+       
+       
+    </Window.CommandBindings>
     <DockPanel>
+        <Button Content="Button" Height="319" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="Button1" Height="319" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
 
     </DockPanel>
 </Window>

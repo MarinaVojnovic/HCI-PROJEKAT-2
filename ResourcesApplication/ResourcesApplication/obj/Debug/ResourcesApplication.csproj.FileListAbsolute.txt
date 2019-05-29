@@ -28,4 +28,7 @@ C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\Resourc
 C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\ResourcesApplication.csproj.CoreCompileInputs.cache
 C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\ResourcesApplication.exe
 C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\ResourcesApplication.pdb
-C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\AddTag.g.cs
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\AddTag.baml
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\AddResourceType.g.cs
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\AddResourceType.baml

@@ -9,7 +9,7 @@ using ResourcesApplication.Beans;
 
 namespace ResourcesApplication.Validation
 {
-    public class ManifestationIdValidation : ValidationRule
+    public class ResourceIdValidation : ValidationRule
     {
         public override ValidationResult Validate(object value, System.Globalization.CultureInfo cultureInfo)
         {
