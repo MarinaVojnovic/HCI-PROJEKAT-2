@@ -91,9 +91,23 @@
     <Compile Include="AddResourceType.xaml.cs">
       <DependentUpon>AddResourceType.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AddType.xaml.cs">
+      <DependentUpon>AddType.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\RoutedCommands.cs" />
     <Compile Include="EditTag.xaml.cs">
       <DependentUpon>EditTag.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EditType.xaml.cs">
+      <DependentUpon>EditType.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShowTags.xaml.cs">
+      <DependentUpon>ShowTags.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShowTypes.xaml.cs">
+      <DependentUpon>ShowTypes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\ContentValidation.cs" />
     <Compile Include="Validation\LengthValidation.cs" />
     <Compile Include="Validation\ResourceIdValidation.cs" />
     <Compile Include="Validation\TagIdValidation.cs" />
@@ -110,11 +124,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="AddType.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DeleteTag.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="EditTag.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditType.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -139,6 +161,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ShowTags.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShowTypes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -171,9 +201,7 @@
   <ItemGroup>
     <Resource Include="favicon.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Utils\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

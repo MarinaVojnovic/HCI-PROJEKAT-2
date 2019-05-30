@@ -178,6 +178,7 @@ namespace ResourcesApplication.Beans
             {
                 if (oldId.Equals(getInstance().Tags[i].Id))
                 {
+                    Console.WriteLine("Uslo u updatee");
                     getInstance().Tags[i] = tag;
                     SaveTags();
                     break;

@@ -42,5 +42,32 @@ namespace ResourcesApplication
             AddResource type = new AddResource();
             type.Show();
         }
+
+        private void CommandBinding_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+
+        }
+        private void ShowTypes_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            ShowTypes showTypes = new ShowTypes();
+            showTypes.Show();
+        }
+
+        private void AddTag_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            AddTag addTag = new AddTag();
+            addTag.Show();
+        }
+        private void ShowTags_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            ShowTags showTags = new ShowTags();
+            showTags.Show();
+        }
+
+        private void AddType_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            AddType addType = new AddType();
+            addType.Show();
+        }
     }
 }

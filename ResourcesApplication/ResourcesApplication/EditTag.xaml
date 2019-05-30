@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:wpfTool="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+        xmlns:validation="clr-namespace:ResourcesApplication.Validation"
         xmlns:local="clr-namespace:ResourcesApplication"
         mc:Ignorable="d"
         Title="Edit Tag" Height="300" Width="300">
@@ -32,17 +33,63 @@
             <Label Grid.Column="0" Grid.Row="1" Content="Color:" />
             <Label Grid.Column="0" Grid.Row="2" Content="Description:" />
 
-            <TextBox Name="textBoxId" ToolTip="Enter unique id of tag"  Grid.Column="1" Grid.Row="0" VerticalContentAlignment="Center" Margin="3">
-                <!--VALIDACIJA I OSTALO-->
-            </TextBox>
-            <wpfTool:ColorPicker Name ="ColorPicker" ToolTip="Pick a color of tag" Grid.Column="1" Grid.Row="1" VerticalContentAlignment="Center" Margin="3"/>
-            <TextBox Name="textBoxDescription" MaxLength="1000" TextWrapping="Wrap"  AcceptsReturn="True" Grid.Column="1" Grid.Row="2" ToolTip="Description of tag" VerticalScrollBarVisibility="Auto" Margin="3,3,3,10" >
+            <TextBox Name="textBoxId"  IsEnabled="False" Validation.Error="textBoxId_Error" ToolTip="Enter unique id of tag"  Grid.Column="1" Grid.Row="0" VerticalContentAlignment="Center" Margin="3">
+                <TextBox.Text>
+                    <Binding Path="Id" UpdateSourceTrigger="LostFocus" NotifyOnValidationError="True">
+                        <Binding.ValidationRules>
+                            <validation:LengthValidation ValidationStep="RawProposedValue" Min="3" Max="30" />
+                            <validation:ContentValidation ValidationStep="RawProposedValue" />
+                        
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+                <Validation.ErrorTemplate>
+                    <ControlTemplate>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="150" />
+                            </Grid.ColumnDefinitions>
 
+                            <AdornedElementPlaceholder Grid.Column="0" Grid.Row="0" x:Name="textBox"/>
+                            <TextBlock TextWrapping="Wrap" Grid.Column="1" Grid.Row="0" Text="{Binding [0].ErrorContent}" Foreground="Red"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Validation.ErrorTemplate>
+            </TextBox>
+            <wpfTool:ColorPicker Name ="ColorPicker" SelectedColorChanged="ColorPicker_SelectedColorChanged"  ToolTip="Pick a color of tag" Grid.Column="1" Grid.Row="1" VerticalContentAlignment="Center" Margin="3"/>
+            <TextBox Name="textBoxDescription" MaxLength="1000" TextWrapping="Wrap"  Validation.Error="textBoxDescription_Error"  AcceptsReturn="True" Grid.Column="1" Grid.Row="2" ToolTip="Description of tag" VerticalScrollBarVisibility="Auto" Margin="3,3,3,10" >
+                <TextBox.Text>
+                    <Binding Path="Description" UpdateSourceTrigger="LostFocus">
+                        <Binding.ValidationRules>
+                            <validation:LengthValidation ValidationStep="RawProposedValue" Min="0" Max="1000" />
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+                <Validation.ErrorTemplate>
+                    <ControlTemplate>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="150" />
+                            </Grid.ColumnDefinitions>
+
+                            <AdornedElementPlaceholder Grid.Column="0" Grid.Row="2" x:Name="textBox"/>
+                            <TextBlock TextWrapping="Wrap" Grid.Column="1" Grid.Row="2" Text="{Binding [0].ErrorContent}" Foreground="Red"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Validation.ErrorTemplate>
             </TextBox>
         </Grid>
         <StackPanel Grid.Column="0" Grid.Row="3" Orientation="Horizontal" >
-            <Button Name="buttonSave" IsEnabled="True"  Content="Save" Margin="0,0,0,0" Padding="10,5" Background="LightGray" />
-            <Button Name="buttonCancel" ToolTip="Odustajanje od unosa podataka" Content="Cancel" Margin="10,0,0,0" Padding="5,5" />
+            <Button Name="buttonSave" IsEnabled="True"  Click="buttonSave_Click" Content="Save" Margin="0,0,0,0" Padding="10,5" Background="LightGray" />
+            <Button Name="buttonCancel" Click="buttonCancel_Click" ToolTip="Odustajanje od unosa podataka" Content="Cancel" Margin="10,0,0,0" Padding="5,5" />
         </StackPanel>
     </Grid>
 

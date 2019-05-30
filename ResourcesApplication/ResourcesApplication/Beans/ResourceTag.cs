@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace ResourcesApplication.Beans
 {
     [Serializable]
-    class ResourceTag : INotifyPropertyChanged
+    public class ResourceTag : INotifyPropertyChanged
     {
 
         private string id;

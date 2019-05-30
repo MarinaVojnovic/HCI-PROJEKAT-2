@@ -75,3 +75,27 @@ C:\Users\Korisnik\Desktop\SONJA HCI\HCI-PROJEKAT-2\ResourcesApplication\Resource
 C:\Users\Korisnik\Desktop\SONJA HCI\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\ResourcesApplication.g.resources
 C:\Users\Korisnik\Desktop\SONJA HCI\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\ResourcesApplication.Properties.Resources.resources
 C:\Users\Korisnik\Desktop\SONJA HCI\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\ResourcesApplication.csproj.GenerateResource.Cache
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\AddResource.g.cs
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\EditTag.g.cs
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\AddResource.baml
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\EditTag.baml
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\ResourcesApplication.csproj.CopyComplete
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\ShowTags.g.cs
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\ShowTags.baml
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\AddType.g.cs
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\AddType.baml
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\ShowTypes.g.cs
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\ShowTypes.baml
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\EditType.g.cs
+C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\EditType.baml
