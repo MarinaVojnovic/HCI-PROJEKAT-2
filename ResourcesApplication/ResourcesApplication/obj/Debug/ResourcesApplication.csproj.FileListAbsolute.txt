@@ -99,3 +99,46 @@ C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\Resourc
 C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\ShowTypes.baml
 C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\EditType.g.cs
 C:\Users\marina\Desktop\HCI-PROJEKAT\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\EditType.baml
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\ResourcesApplication.exe.config
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\ResourcesApplication.exe
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\ResourcesApplication.pdb
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\ResourcesApplication.exe
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\ResourcesApplication.pdb
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\ResourcesApplication.csprojResolveAssemblyReference.cache
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\AddResource.g.cs
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\AddTag.g.cs
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\AddResourceType.g.cs
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\AddType.g.cs
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\DeleteTag.g.cs
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\EditTag.g.cs
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\EditType.g.cs
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\MainWindow.g.cs
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\ShowTags.g.cs
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\ShowTypes.g.cs
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\App.g.cs
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\ResourcesApplication_MarkupCompile.cache
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\ResourcesApplication_MarkupCompile.lref
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\AddResource.baml
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\AddTag.baml
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\AddResourceType.baml
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\AddType.baml
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\DeleteTag.baml
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\EditTag.baml
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\EditType.baml
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\MainWindow.baml
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\ShowTags.baml
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\ShowTypes.baml
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\ResourcesApplication.g.resources
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\ResourcesApplication.Properties.Resources.resources
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\ResourcesApplication.csproj.GenerateResource.Cache
