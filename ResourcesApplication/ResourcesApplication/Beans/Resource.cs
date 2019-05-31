@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace ResourcesApplication.Beans
 {   
     [Serializable]
-    class Resource : INotifyPropertyChanged
+    public class Resource : INotifyPropertyChanged
     {
 
         private string id;
@@ -130,8 +130,8 @@ namespace ResourcesApplication.Beans
             }
         }
 
-        private double Price;
-        public double price {
+        private double price;
+        public double Price {
             get { return price; }
             set
             {

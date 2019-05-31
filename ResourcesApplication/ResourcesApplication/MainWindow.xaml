@@ -13,6 +13,8 @@
         <CommandBinding Command="cmd:RoutedCommands.ShowTags" Executed="ShowTags_Executed"/>
         <CommandBinding Command="cmd:RoutedCommands.AddType" Executed="AddType_Executed"/>
         <CommandBinding Command="cmd:RoutedCommands.ShowTypes" Executed="ShowTypes_Executed"/>
+        <CommandBinding Command="cmd:RoutedCommands.AddResource" Executed="AddResource_Executed"/>
+        <CommandBinding Command="cmd:RoutedCommands.ShowResources" Executed="ShowResources_Executed"/>
     </Window.CommandBindings>
     <DockPanel>
 
@@ -44,6 +46,20 @@
                 <TextBlock Text="Prikaži tipove" VerticalAlignment="Center" HorizontalAlignment="Right" Padding="3"/>
             </StackPanel>
         </Button>
+
+        <Button Name="buttonAddResource" Command="cmd:RoutedCommands.AddResource" ToolTip="Prikaz svih tipova manifestacija" Margin="5" Padding="3">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Dodaj resurs" VerticalAlignment="Center" HorizontalAlignment="Right" Padding="3"/>
+            </StackPanel>
+        </Button>
+
+
+        <Button Name="buttonShowResources" Command="cmd:RoutedCommands.ShowResources" ToolTip="Prikaz svih tipova manifestacija" Margin="5" Padding="3">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Prikazi resurse" VerticalAlignment="Center" HorizontalAlignment="Right" Padding="3"/>
+            </StackPanel>
+        </Button>
+
 
 
 

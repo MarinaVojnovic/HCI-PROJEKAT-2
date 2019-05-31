@@ -18,7 +18,7 @@ namespace ResourcesApplication.Beans
         private ObservableCollection<Resource> resources;
         public ObservableCollection<Resource> Resources
         {
-            get { return Resources; }
+            get { return resources; }
             set
             {
                 if (value != resources)

@@ -12,9 +12,9 @@ namespace ResourcesApplication.Beans
 {
     class SerializationService
     {
-        public static readonly string RESOURCES_DATA = "resources.txt";
-        public static readonly string TYPES_DATA = "types.txt";
-        public static readonly string TAGS_DATA = "tags.txt";
+        public static readonly string RESOURCES_DATA = "resources.bin";
+        public static readonly string TYPES_DATA = "types.bin";
+        public static readonly string TAGS_DATA = "tags.bin";
 
         public static void serializeResource(ObservableCollection<Resource> resource)
         {

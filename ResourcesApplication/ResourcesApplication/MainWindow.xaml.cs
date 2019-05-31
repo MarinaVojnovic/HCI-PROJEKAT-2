@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +16,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using ResourcesApplication.Beans;
+
 namespace ResourcesApplication
 {
     /// <summary>
@@ -20,9 +25,49 @@ namespace ResourcesApplication
     /// </summary>
     public partial class MainWindow : Window
     {
+        private ObservableCollection<Resource> resources;
+        public ObservableCollection<Resource> Resources
+        {
+            get { return resources; }
+            set
+            {
+                if (value != resources)
+                {
+                    resources = value;
+                    OnPropertyChanged("Resources");
+                }
+            }
+        }
+
+        private ObservableCollection<ResourceType> resourcesType;
+        public ObservableCollection<ResourceType> ResourcesType
+        {
+            get { return resourcesType; }
+            set
+            {
+                if (value != resourcesType)
+                {
+                    resourcesType = value;
+                    OnPropertyChanged("ResourcesType");
+                }
+            }
+        }
+
+        private Resource ClickedResource;
         public MainWindow()
         {
             InitializeComponent();
+            Database.loadData();
+
+            DataContext = this;
+            Resources = Database.getInstance().Resources;
+            ResourcesType = Database.getInstance().Types;
+        }
+
+        private void AddResource_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            AddResource addResource = new AddResource();
+            addResource.Show();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -68,6 +113,23 @@ namespace ResourcesApplication
         {
             AddType addType = new AddType();
             addType.Show();
+        }
+
+       
+
+        private void ShowResources_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            ShowResources showResources = new ShowResources();
+            showResources.Show();
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected virtual void OnPropertyChanged(string name)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(name));
+            }
         }
     }
 }

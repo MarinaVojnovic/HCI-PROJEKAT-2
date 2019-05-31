@@ -47,6 +47,26 @@ namespace ResourcesApplication.Commands
                    }
                    );
 
+        public static readonly RoutedUICommand AddResource = new RoutedUICommand(
+                  "Add Resource",
+                  "AddResource",
+                  typeof(RoutedCommand),
+                  new InputGestureCollection()
+                  {
+                new KeyGesture(Key.T, ModifierKeys.Alt)
+                  }
+                  );
+
+        public static readonly RoutedUICommand ShowResources = new RoutedUICommand(
+                  "Show Resources",
+                  "ShowResources",
+                  typeof(RoutedCommand),
+                  new InputGestureCollection()
+                  {
+                new KeyGesture(Key.T, ModifierKeys.Alt)
+                  }
+                  );
+
 
 
 
