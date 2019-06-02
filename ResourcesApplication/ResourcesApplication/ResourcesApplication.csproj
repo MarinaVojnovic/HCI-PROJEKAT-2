@@ -95,6 +95,9 @@
       <DependentUpon>AddType.xaml</DependentUpon>
     </Compile>
     <Compile Include="Commands\RoutedCommands.cs" />
+    <Compile Include="Demo\Demo.xaml.cs">
+      <DependentUpon>Demo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EditTag.xaml.cs">
       <DependentUpon>EditTag.xaml</DependentUpon>
     </Compile>
@@ -132,6 +135,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DeleteTag.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Demo\Demo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -209,7 +216,13 @@
     <Resource Include="favicon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="HelpData\proba.mp4" />
+    <Content Include="Demo\DemoTest.mp4" />
+    <Resource Include="Demo\DemoPause.png" />
+    <Resource Include="Demo\DemoPlay.png" />
+    <Resource Include="Demo\DemoStop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="HelpData\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
