@@ -98,6 +98,9 @@
     <Compile Include="Demo\Demo.xaml.cs">
       <DependentUpon>Demo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Demo\DemoHelp.xaml.cs">
+      <DependentUpon>DemoHelp.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EditTag.xaml.cs">
       <DependentUpon>EditTag.xaml</DependentUpon>
     </Compile>
@@ -139,6 +142,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Demo\Demo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Demo\DemoHelp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -215,19 +222,24 @@
     <Content Include="Demo\DemoTest.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Resource Include="Icons\add.png" />
-    <Resource Include="Icons\cancel.png" />
-    <Resource Include="Icons\delete.png" />
-    <Resource Include="Icons\demo_play.png" />
-    <Resource Include="Icons\document.png" />
-    <Resource Include="Icons\edit.png" />
-    <Resource Include="Icons\favicon.ico" />
-    <Resource Include="Icons\pause.png" />
-    <Resource Include="Icons\play.png" />
-    <Resource Include="Icons\question_mark.png" />
-    <Resource Include="Icons\search.png" />
-    <Resource Include="Icons\show_table.png" />
-    <Resource Include="Icons\stop.png" />
+    <Resource Include="Icons\AddIcon.png" />
+    <Resource Include="Icons\AppIcon.png" />
+    <Resource Include="Icons\CancelIcon.png" />
+    <Resource Include="Icons\DeleteIcon.png" />
+    <Resource Include="Icons\DemoPauseIcon.png" />
+    <Resource Include="Icons\DemoPlayIcon.png" />
+    <Resource Include="Icons\DemoStopIcon.png" />
+    <Resource Include="Icons\DemoTapeIcon.png" />
+    <Resource Include="Icons\DocumentIcon.png" />
+    <Resource Include="Icons\EditIcon.png" />
+    <Resource Include="Icons\ForestIcon.png" />
+    <Resource Include="Icons\OilIcon.png" />
+    <Resource Include="Icons\QuestioMarkIcon.png" />
+    <Resource Include="Icons\SearchIcon.png" />
+    <Resource Include="Icons\TableIcon.png" />
+    <Resource Include="Icons\TransmissionTowerIcon.png" />
+    <Resource Include="Icons\WaterIcon.png" />
+    <Resource Include="Icons\WindIcon.png" />
     <Resource Include="Maps\asia_map.jpg" />
     <Resource Include="Maps\europe_map.jpg" />
     <Resource Include="Maps\south_america_map.jpg" />
@@ -235,9 +247,6 @@
     <Resource Include="Maps\NoviSadMap1.png" />
     <Resource Include="Maps\NoviSadMap2.png" />
     <Resource Include="Maps\NoviSadMap3.png" />
-    <Resource Include="Icons\DemoPause.png" />
-    <Resource Include="Icons\DemoPlay.png" />
-    <Resource Include="Icons\DemoStop.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="HelpData\" />

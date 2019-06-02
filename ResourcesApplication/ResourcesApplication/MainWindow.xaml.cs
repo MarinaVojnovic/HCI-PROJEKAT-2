@@ -17,6 +17,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using ResourcesApplication.Beans;
+using ResourcesApplication.Demo;
 
 namespace ResourcesApplication
 {
@@ -135,6 +136,13 @@ namespace ResourcesApplication
         private void listView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+
+        private void Demo_Click(object sender, RoutedEventArgs e)
+        {
+            DemoHelp demo = new DemoHelp();
+            demo.Show();
         }
     }
 }

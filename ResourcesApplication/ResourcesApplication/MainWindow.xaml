@@ -6,7 +6,8 @@
         xmlns:cmd="clr-namespace:ResourcesApplication.Commands"
         xmlns:local="clr-namespace:ResourcesApplication"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="1050">
+        Title="MainWindow" Height="600" Width="1050"
+        Icon="Icons\AppIcon.png">
 
     <Window.CommandBindings>
         <CommandBinding Command="cmd:RoutedCommands.AddTag"  Executed="AddTag_Executed"></CommandBinding>
@@ -24,58 +25,58 @@
                 </ItemsPanelTemplate>
             </Menu.ItemsPanel>
             <MenuItem Header=" Resursi" ToolTip="Prikaz svih opcija za manipulisanje resursima">
-                <MenuItem Header=" Dodaj resurs" ToolTip="Dodavanje nove manifestacije" Command="cmd:RoutedCommands.AddResource" InputGestureText="Ctrl+M">
+                <MenuItem Header=" Dodaj resurs" ToolTip="Dodavanje novih resursa" Command="cmd:RoutedCommands.AddResource" InputGestureText="Ctrl+M">
                     <MenuItem.Icon>
-                        <Image Source="Icons\add.png" Width="12" Height="12"/>
+                        <Image Source="Icons\AddIcon.png" Width="12" Height="12"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator></Separator>
                 <MenuItem Header=" Prikaz resursa" ToolTip="Prikaz svih resursa" Command="cmd:RoutedCommands.ShowResources" InputGestureText="Alt+M">
                     <MenuItem.Icon>
-                        <Image Source="Icons\show_table.png" Width="12" Height="12"/>
+                        <Image Source="Icons\TableIcon.png" Width="12" Height="12"/>
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
             <MenuItem Header=" Tip resursa" ToolTip="Prikaz svih opcija za manipulisanje tipovima resursa">
                 <MenuItem Header=" Dodaj tip resursa" ToolTip="Dodavanje novog tipa resursa" Command="cmd:RoutedCommands.AddType" InputGestureText="Ctrl+T">
                     <MenuItem.Icon>
-                        <Image Source="Icons\add.png" Width="12" Height="12"/>
+                        <Image Source="Icons\AddIcon.png" Width="12" Height="12"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator></Separator>
                 <MenuItem Header=" Prikaz tipova resursa" ToolTip="Prikaz svih tipova resursa" Command="cmd:RoutedCommands.ShowTypes" InputGestureText="Alt+T">
                     <MenuItem.Icon>
-                        <Image Source="Icons\show_table.png" Width="12" Height="12"/>
+                        <Image Source="Icons\TableIcon.png" Width="12" Height="12"/>
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
             <MenuItem Header=" Etikete" ToolTip="Prikaz svih opcija za manipulisanje etiketama">
                 <MenuItem Header=" Dodaj etiketu" ToolTip="Dodavanje nove etikete" Command="cmd:RoutedCommands.AddTag" InputGestureText="Ctrl+E">
                     <MenuItem.Icon>
-                        <Image Source="Icons\add.png" Width="12" Height="12"/>
+                        <Image Source="Icons\AddIcon.png" Width="12" Height="12"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator></Separator>
                 <MenuItem Header="_Prikaži etikete" ToolTip="Prikaz svih etiketa" Command="cmd:RoutedCommands.ShowTags" InputGestureText="Alt+E">
                     <MenuItem.Icon>
-                        <Image Source="Icons\show_table.png" Width="12" Height="12"/>
+                        <Image Source="Icons\TableIcon.png" Width="12" Height="12"/>
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
-            <!-- 
-        <MenuItem Header=" Pomoć" ToolTip="Prikaz pomoćne dokumentacije" HorizontalAlignment="Right">
-            <MenuItem Header="_Dokumentacija" InputGestureText="F1" Click="Help_Click">
+
+            <MenuItem Header=" Pomoć" ToolTip="Prikaz korisnicke pomoći" HorizontalAlignment="Right">
+            <!--<MenuItem Header="_Dokumentacija" InputGestureText="F1" Click="Help_Click">
                 <MenuItem.Icon>
                     <Image Source="Icons\document.png" Width="12" Height="12"/>
                 </MenuItem.Icon>
-            </MenuItem>
-            <MenuItem Name="Demo" Header="_Demo mod" Click="Demo_Click">
+            </MenuItem>-->
+            <MenuItem Name="Demo" Header="_Demo" Click="Demo_Click">
                 <MenuItem.Icon>
-                    <Image Source="Icons\demo_play.png" Width="12" Height="12"/>
+                    <Image Source="Icons\DemoTapeIcon.png" Width="12" Height="12"/>
                 </MenuItem.Icon>
             </MenuItem>
         </MenuItem>
-        -->
+        
         </Menu>
 
         <Grid>
