@@ -216,13 +216,17 @@
     <Resource Include="favicon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Demo\DemoTest.mp4" />
+    <Content Include="Demo\DemoTest.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Resource Include="Demo\DemoPause.png" />
     <Resource Include="Demo\DemoPlay.png" />
     <Resource Include="Demo\DemoStop.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="HelpData\" />
+    <Folder Include="Icons\" />
+    <Folder Include="Maps\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

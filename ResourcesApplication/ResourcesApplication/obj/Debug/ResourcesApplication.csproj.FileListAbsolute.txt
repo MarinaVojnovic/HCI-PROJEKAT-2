@@ -149,3 +149,4 @@ C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplicat
 C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\ShowResources.baml
 C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\Demo\Demo.g.cs
 C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\Demo\Demo.baml
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\Demo\DemoTest.mp4
