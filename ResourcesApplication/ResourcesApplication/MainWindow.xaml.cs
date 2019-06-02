@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,136 +10,74 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-
-using ResourcesApplication.Beans;
-using ResourcesApplication.Demo;
 
 namespace ResourcesApplication
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Maps.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        private ObservableCollection<Resource> resources;
-        public ObservableCollection<Resource> Resources
-        {
-            get { return resources; }
-            set
-            {
-                if (value != resources)
-                {
-                    resources = value;
-                    OnPropertyChanged("Resources");
-                }
-            }
-        }
-
-        private ObservableCollection<ResourceType> resourcesType;
-        public ObservableCollection<ResourceType> ResourcesType
-        {
-            get { return resourcesType; }
-            set
-            {
-                if (value != resourcesType)
-                {
-                    resourcesType = value;
-                    OnPropertyChanged("ResourcesType");
-                }
-            }
-        }
-
-        private Resource ClickedResource;
         public MainWindow()
         {
             InitializeComponent();
-            Database.loadData();
-
-            DataContext = this;
-            Resources = Database.getInstance().Resources;
-            ResourcesType = Database.getInstance().Types;
         }
 
-        private void AddResource_Executed(object sender, ExecutedRoutedEventArgs e)
+        private void worldButton_Click(object sender, RoutedEventArgs e)
         {
-            AddResource addResource = new AddResource();
-            addResource.Show();
+
+            string currentDirectory = System.IO.Directory.GetCurrentDirectory();
+            string path = System.IO.Path.Combine(currentDirectory, "Maps/world_map.png");
+            TempWindow tag = new TempWindow("WORLD");
+
+            ImageBrush imgB = new ImageBrush();
+            imgB.ImageSource = new System.Windows.Media.Imaging.BitmapImage(new Uri(path, UriKind.Relative));
+
+            tag.Canvas1.Fill = imgB;
+            tag.Show();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void europeButton_Click(object sender, RoutedEventArgs e)
         {
-            AddTag addTag = new AddTag();
-            addTag.Show();
+
+            string currentDirectory = System.IO.Directory.GetCurrentDirectory();
+            string path = System.IO.Path.Combine(currentDirectory, "Maps/europe_map.jpg");
+            TempWindow tag = new TempWindow("EUROPE");
+
+            ImageBrush imgB = new ImageBrush();
+            imgB.ImageSource = new System.Windows.Media.Imaging.BitmapImage(new Uri(path, UriKind.Relative));
+
+            tag.Canvas1.Fill = imgB;
+            tag.Show();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void americaButton_Click(object sender, RoutedEventArgs e)
         {
-            AddResourceType type = new AddResourceType();
-            type.Show();
+
+            string currentDirectory = System.IO.Directory.GetCurrentDirectory();
+            string path = System.IO.Path.Combine(currentDirectory, "Maps/south_america_map.jpg");
+            TempWindow tag = new TempWindow("AMERICA");
+
+            ImageBrush imgB = new ImageBrush();
+            imgB.ImageSource = new System.Windows.Media.Imaging.BitmapImage(new Uri(path, UriKind.Relative));
+
+            tag.Canvas1.Fill = imgB;
+            tag.Show();
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            AddResource type = new AddResource();
-            type.Show();
-        }
-
-        private void CommandBinding_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        private void asiaButton_Click(object sender, RoutedEventArgs e)
         {
 
-        }
-        private void ShowTypes_Executed(object sender, ExecutedRoutedEventArgs e)
-        {
-            ShowTypes showTypes = new ShowTypes();
-            showTypes.Show();
-        }
+            string currentDirectory = System.IO.Directory.GetCurrentDirectory();
+            string path = System.IO.Path.Combine(currentDirectory, "Maps/asia_map.jpg");
+            TempWindow tag = new TempWindow("ASIA");
 
-        private void AddTag_Executed(object sender, ExecutedRoutedEventArgs e)
-        {
-            AddTag addTag = new AddTag();
-            addTag.Show();
-        }
-        private void ShowTags_Executed(object sender, ExecutedRoutedEventArgs e)
-        {
-            ShowTags showTags = new ShowTags();
-            showTags.Show();
-        }
+            ImageBrush imgB = new ImageBrush();
+            imgB.ImageSource = new System.Windows.Media.Imaging.BitmapImage(new Uri(path, UriKind.Relative));
 
-        private void AddType_Executed(object sender, ExecutedRoutedEventArgs e)
-        {
-            AddType addType = new AddType();
-            addType.Show();
-        }
-
-
-
-        private void ShowResources_Executed(object sender, ExecutedRoutedEventArgs e)
-        {
-            ShowResources showResources = new ShowResources();
-            showResources.Show();
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged(string name)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(name));
-            }
-        }
-
-        private void listView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-
-        private void Demo_Click(object sender, RoutedEventArgs e)
-        {
-            DemoHelp demo = new DemoHelp();
-            demo.Show();
+            tag.Canvas1.Fill = imgB;
+            tag.Show();
         }
     }
 }

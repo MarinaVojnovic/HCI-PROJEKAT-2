@@ -116,6 +116,9 @@
     <Compile Include="ShowTypes.xaml.cs">
       <DependentUpon>ShowTypes.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TempWindow.xaml.cs">
+      <DependentUpon>TempWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Validation\ContentValidation.cs" />
     <Compile Include="Validation\LengthValidation.cs" />
     <Compile Include="Validation\ResourceIdValidation.cs" />
@@ -190,6 +193,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="TempWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -222,6 +229,7 @@
     <Content Include="Demo\DemoTest.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Maps\background.jpg" />
     <Resource Include="Icons\AddIcon.png" />
     <Resource Include="Icons\AppIcon.png" />
     <Resource Include="Icons\CancelIcon.png" />

@@ -6,111 +6,56 @@
         xmlns:cmd="clr-namespace:ResourcesApplication.Commands"
         xmlns:local="clr-namespace:ResourcesApplication"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="1050"
-        Icon="Icons\AppIcon.png">
-
-    <Window.CommandBindings>
-        <CommandBinding Command="cmd:RoutedCommands.AddTag"  Executed="AddTag_Executed"></CommandBinding>
-        <CommandBinding Command="cmd:RoutedCommands.ShowTags" Executed="ShowTags_Executed"/>
-        <CommandBinding Command="cmd:RoutedCommands.AddType" Executed="AddType_Executed"/>
-        <CommandBinding Command="cmd:RoutedCommands.ShowTypes" Executed="ShowTypes_Executed"/>
-        <CommandBinding Command="cmd:RoutedCommands.AddResource" Executed="AddResource_Executed"/>
-        <CommandBinding Command="cmd:RoutedCommands.ShowResources" Executed="ShowResources_Executed"/>
-    </Window.CommandBindings>
+        Title="Maps" Height="650" Width="1050">
     <DockPanel>
-        <Menu DockPanel.Dock ="Top" Height="25">
-            <Menu.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <DockPanel HorizontalAlignment="Stretch"></DockPanel>
-                </ItemsPanelTemplate>
-            </Menu.ItemsPanel>
-            <MenuItem Header=" Resursi" ToolTip="Prikaz svih opcija za manipulisanje resursima">
-                <MenuItem Header=" Dodaj resurs" ToolTip="Dodavanje novih resursa" Command="cmd:RoutedCommands.AddResource" InputGestureText="Ctrl+M">
-                    <MenuItem.Icon>
-                        <Image Source="Icons\AddIcon.png" Width="12" Height="12"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-                <Separator></Separator>
-                <MenuItem Header=" Prikaz resursa" ToolTip="Prikaz svih resursa" Command="cmd:RoutedCommands.ShowResources" InputGestureText="Alt+M">
-                    <MenuItem.Icon>
-                        <Image Source="Icons\TableIcon.png" Width="12" Height="12"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-            </MenuItem>
-            <MenuItem Header=" Tip resursa" ToolTip="Prikaz svih opcija za manipulisanje tipovima resursa">
-                <MenuItem Header=" Dodaj tip resursa" ToolTip="Dodavanje novog tipa resursa" Command="cmd:RoutedCommands.AddType" InputGestureText="Ctrl+T">
-                    <MenuItem.Icon>
-                        <Image Source="Icons\AddIcon.png" Width="12" Height="12"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-                <Separator></Separator>
-                <MenuItem Header=" Prikaz tipova resursa" ToolTip="Prikaz svih tipova resursa" Command="cmd:RoutedCommands.ShowTypes" InputGestureText="Alt+T">
-                    <MenuItem.Icon>
-                        <Image Source="Icons\TableIcon.png" Width="12" Height="12"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-            </MenuItem>
-            <MenuItem Header=" Etikete" ToolTip="Prikaz svih opcija za manipulisanje etiketama">
-                <MenuItem Header=" Dodaj etiketu" ToolTip="Dodavanje nove etikete" Command="cmd:RoutedCommands.AddTag" InputGestureText="Ctrl+E">
-                    <MenuItem.Icon>
-                        <Image Source="Icons\AddIcon.png" Width="12" Height="12"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-                <Separator></Separator>
-                <MenuItem Header="_Prikaži etikete" ToolTip="Prikaz svih etiketa" Command="cmd:RoutedCommands.ShowTags" InputGestureText="Alt+E">
-                    <MenuItem.Icon>
-                        <Image Source="Icons\TableIcon.png" Width="12" Height="12"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-            </MenuItem>
 
-            <MenuItem Header=" Pomoć" ToolTip="Prikaz korisnicke pomoći" HorizontalAlignment="Right">
-            <!--<MenuItem Header="_Dokumentacija" InputGestureText="F1" Click="Help_Click">
-                <MenuItem.Icon>
-                    <Image Source="Icons\document.png" Width="12" Height="12"/>
-                </MenuItem.Icon>
-            </MenuItem>-->
-            <MenuItem Name="Demo" Header="_Demo" Click="Demo_Click">
-                <MenuItem.Icon>
-                    <Image Source="Icons\DemoTapeIcon.png" Width="12" Height="12"/>
-                </MenuItem.Icon>
-            </MenuItem>
-        </MenuItem>
-        
-        </Menu>
-
-        <Grid>
+        <Grid RenderTransformOrigin="0.501,0.492">
+            <Grid.Background>
+                <ImageBrush Stretch="None" ImageSource="Maps/background.jpg" AlignmentY="Top" AlignmentX="Center"/>
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="230" />
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="230"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="250" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="320" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="320" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
+            <Button Name="worldButton" ToolTip="Prikaz mape sveta" Grid.Column="1" Grid.Row="1" Background="Transparent" BorderThickness="0" Click="worldButton_Click">
+                <StackPanel >
+                    <Image Name="World" Height="230" Width="320" Source="Maps/world_map.png"/>
+                </StackPanel>
+            </Button>
 
-            <StackPanel HorizontalAlignment="Right" DockPanel.Dock="Right" Orientation="Vertical" Width="250" Height="540" VerticalAlignment="Top" Grid.Column="0" Background="Black">
+            <Button Name="southAmericaButton" ToolTip="Prikaz mape Severne Amerike" Grid.Column="3" Grid.Row="1" Background="Transparent" BorderThickness="0" Click="americaButton_Click">
+                <StackPanel >
+                    <Image Name="SouthAmerica" Height="230" Width="320" Source="Maps/south_america_map.jpg"/>
+                </StackPanel>
+            </Button>
 
-                <GroupBox ToolTip="Lista resursa koji mogu biti dodati na mapu" Header="Resursi" Height="530" Margin="10,0" Foreground="White">
-                    <!--PreviewMouseLeftButtonDown="ListView_PreviewMouseLeftButtonDown" MouseMove="ListView_MouseMove" SelectionChanged="listView_SelectionChanged"-->
-                    <ListView Name="listView" SelectedItem="{Binding Path=SelectedResource, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Path=Resources}"  Margin="0,0,-2,0" Background="Black"  Foreground="White">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <WrapPanel>
-                                    <StackPanel Orientation="Horizontal">
-                                        <Image Source="{Binding IconPath}" Height="30" Width="30" Margin="0,0,5,0" HorizontalAlignment="Left"/>
-                                        <TextBlock Text="{Binding Id}" FontWeight="Bold" Foreground="White" VerticalAlignment="Center"/>
-                                    </StackPanel>
-                                </WrapPanel>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                </GroupBox>
-            </StackPanel>
+            <Button Name="europeButton" ToolTip="Prikaz mape Evrope" Grid.Column="1" Grid.Row="3" Background="Transparent" BorderThickness="0" Click="europeButton_Click">
+                <StackPanel >
+                    <Image Name="Europe" Height="230" Width="320" Source="Maps/europe_map.jpg"/>
+                </StackPanel>
+            </Button>
 
-            <!-- Mouse.PreviewMouseDown="Map_PreviewMouseLeftButtonDown" MouseRightButtonDown="Map_MouseRightButtonDown" MouseMove="Map_MouseMove" DragEnter="Map_DragEnter" Drop="Map_Drop"-->
-            <Canvas Name="Map" AllowDrop="True"   Grid.Column="1">
-                <Canvas.Background>
-                    <ImageBrush ImageSource="Maps\world_map.png" AlignmentX="Left" AlignmentY="Top" Stretch="None"/>
-                </Canvas.Background>
-            </Canvas>
+            <Button Name="asiaButton" ToolTip="Prikaz mape sveta" Grid.Column="3" Grid.Row="3" Background="Transparent" BorderThickness="0" Click="asiaButton_Click">
+                <StackPanel >
+                    <Image Name="Africa" Height="230" Width="320" Source="Maps/asia_map.jpg"/>
+                </StackPanel>
+            </Button>
+
+            <Label Content="Mapa sveta" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" FontWeight="Bold"/>
+            <Label Content="Mapa Severne Amerike" Grid.Column="3" Grid.Row="2" HorizontalAlignment="Center" FontWeight="Bold"/>
+            <Label Content="Mapa Evrope" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" FontWeight="Bold"/>
+            <Label Content="Mapa Azije" Grid.Column="3" Grid.Row="4" HorizontalAlignment="Center" FontWeight="Bold"/>
         </Grid>
     </DockPanel>
 </Window>

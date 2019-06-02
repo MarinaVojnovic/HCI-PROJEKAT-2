@@ -201,3 +201,7 @@ C:\Users\Korisnik\Desktop\hcimapa\gitovani\HCI-PROJEKAT-2\ResourcesApplication\R
 C:\Users\Korisnik\Desktop\hcimapa\gitovani\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\ResourcesApplication.csproj.GenerateResource.Cache
 C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\Demo\DemoHelp.g.cs
 C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\Demo\DemoHelp.baml
+C:\Users\Korisnik\Desktop\hcimapa\gitovani\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\Demo\DemoHelp.g.cs
+C:\Users\Korisnik\Desktop\hcimapa\gitovani\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\TempWindow.g.cs
+C:\Users\Korisnik\Desktop\hcimapa\gitovani\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\Demo\DemoHelp.baml
+C:\Users\Korisnik\Desktop\hcimapa\gitovani\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\TempWindow.baml
