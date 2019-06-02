@@ -115,7 +115,7 @@ namespace ResourcesApplication
             addType.Show();
         }
 
-       
+
 
         private void ShowResources_Executed(object sender, ExecutedRoutedEventArgs e)
         {
@@ -130,6 +130,11 @@ namespace ResourcesApplication
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(name));
             }
+        }
+
+        private void listView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

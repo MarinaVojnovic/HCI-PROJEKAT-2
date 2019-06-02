@@ -215,6 +215,23 @@
     <Content Include="Demo\DemoTest.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Icons\add.png" />
+    <Resource Include="Icons\cancel.png" />
+    <Resource Include="Icons\delete.png" />
+    <Resource Include="Icons\demo_play.png" />
+    <Resource Include="Icons\document.png" />
+    <Resource Include="Icons\edit.png" />
+    <Resource Include="Icons\favicon.ico" />
+    <Resource Include="Icons\pause.png" />
+    <Resource Include="Icons\play.png" />
+    <Resource Include="Icons\question_mark.png" />
+    <Resource Include="Icons\search.png" />
+    <Resource Include="Icons\show_table.png" />
+    <Resource Include="Icons\stop.png" />
+    <Resource Include="Maps\asia_map.jpg" />
+    <Resource Include="Maps\europe_map.jpg" />
+    <Resource Include="Maps\south_america_map.jpg" />
+    <Resource Include="Maps\world_map.png" />
     <Resource Include="Maps\NoviSadMap1.png" />
     <Resource Include="Maps\NoviSadMap2.png" />
     <Resource Include="Maps\NoviSadMap3.png" />
