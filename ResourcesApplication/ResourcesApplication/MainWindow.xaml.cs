@@ -131,5 +131,10 @@ namespace ResourcesApplication
                 PropertyChanged(this, new PropertyChangedEventArgs(name));
             }
         }
+
+        private void listView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

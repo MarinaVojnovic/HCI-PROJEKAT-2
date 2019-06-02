@@ -104,6 +104,9 @@
     <Compile Include="EditType.xaml.cs">
       <DependentUpon>EditType.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Maps.xaml.cs">
+      <DependentUpon>Maps.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ShowResources.xaml.cs">
       <DependentUpon>ShowResources.xaml</DependentUpon>
     </Compile>
@@ -171,6 +174,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Maps.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ShowResources.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -219,14 +226,29 @@
     <Content Include="Demo\DemoTest.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Icons\add.png" />
+    <Resource Include="Icons\cancel.png" />
+    <Resource Include="Icons\delete.png" />
+    <Resource Include="Icons\demo_play.png" />
+    <Resource Include="Icons\document.png" />
+    <Resource Include="Icons\edit.png" />
+    <Resource Include="Icons\favicon.ico" />
+    <Resource Include="Icons\pause.png" />
+    <Resource Include="Icons\play.png" />
+    <Resource Include="Icons\question_mark.png" />
+    <Resource Include="Icons\search.png" />
+    <Resource Include="Icons\show_table.png" />
+    <Resource Include="Icons\stop.png" />
+    <Resource Include="Maps\asia_map.jpg" />
+    <Resource Include="Maps\europe_map.jpg" />
+    <Resource Include="Maps\south_america_map.jpg" />
+    <Resource Include="Maps\world_map.png" />
     <Resource Include="Demo\DemoPause.png" />
     <Resource Include="Demo\DemoPlay.png" />
     <Resource Include="Demo\DemoStop.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="HelpData\" />
-    <Folder Include="Icons\" />
-    <Folder Include="Maps\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

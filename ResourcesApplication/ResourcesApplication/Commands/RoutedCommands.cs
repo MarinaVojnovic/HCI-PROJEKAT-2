@@ -38,36 +38,44 @@ namespace ResourcesApplication.Commands
            }
            );
         public static readonly RoutedUICommand ShowTypes = new RoutedUICommand(
-                   "Show Types",
-                   "ShowTypes",
-                   typeof(RoutedCommand),
-                   new InputGestureCollection()
-                   {
-                new KeyGesture(Key.T, ModifierKeys.Alt)
-                   }
-                   );
+            "Show Types",
+            "ShowTypes",
+            typeof(RoutedCommand),
+            new InputGestureCollection()
+            {
+        new KeyGesture(Key.T, ModifierKeys.Alt)
+            }
+            );
 
         public static readonly RoutedUICommand AddResource = new RoutedUICommand(
-                  "Add Resource",
-                  "AddResource",
-                  typeof(RoutedCommand),
-                  new InputGestureCollection()
-                  {
-                new KeyGesture(Key.T, ModifierKeys.Alt)
-                  }
-                  );
+            "Add Resource",
+            "AddResource",
+            typeof(RoutedCommand),
+            new InputGestureCollection()
+            {
+        new KeyGesture(Key.T, ModifierKeys.Alt)
+            }
+            );
 
         public static readonly RoutedUICommand ShowResources = new RoutedUICommand(
-                  "Show Resources",
-                  "ShowResources",
-                  typeof(RoutedCommand),
-                  new InputGestureCollection()
-                  {
-                new KeyGesture(Key.T, ModifierKeys.Alt)
-                  }
-                  );
+            "Show Resources",
+            "ShowResources",
+            typeof(RoutedCommand),
+            new InputGestureCollection()
+            {
+        new KeyGesture(Key.T, ModifierKeys.Alt)
+            }
+            );
 
-
+        public static readonly RoutedUICommand WorldMap = new RoutedUICommand(
+            "World Map",
+            "WorldMap",
+            typeof(RoutedCommand),
+            new InputGestureCollection()
+            {
+        new KeyGesture(Key.T, ModifierKeys.Alt)
+            }
+            );
 
 
     }
