@@ -25,6 +25,7 @@ namespace ResourcesApplication
     /// </summary>
     public partial class AddResource : Window
     {
+        public TempWindow tw { get; set; }
 
         private Resource resource;
         public Resource Resource
@@ -41,7 +42,7 @@ namespace ResourcesApplication
         }
 
 
-        private TempWindow tw;
+        
         private ObservableCollection<ResourceTag> selectedTags;
         public ObservableCollection<ResourceTag> SelectedTags
         {
@@ -71,8 +72,8 @@ namespace ResourcesApplication
             Resource.X = -1;
             Resource.Y = -1;
 
-           autoCompleteBoxTypes.DataContext = Database.getInstance();
-           autoCompleteBoxTags.DataContext = Database.getInstance();
+           autoCompleteBoxTypes.DataContext = tw.database;
+           autoCompleteBoxTags.DataContext = tw.database;
 
             DataContext = Resource;
 
@@ -97,7 +98,7 @@ namespace ResourcesApplication
 
             // Type validation
             if (string.IsNullOrWhiteSpace(autoCompleteBoxTypes.Text)
-                || Database.GetType(autoCompleteBoxTypes.Text) == null)
+                || tw.database.GetType(autoCompleteBoxTypes.Text) == null)
             {
                 textBoxTypeError.Visibility = System.Windows.Visibility.Visible;
                 autoCompleteBoxTypes.Focus();
@@ -109,7 +110,7 @@ namespace ResourcesApplication
                 descriptionError == false &&
                 publicError == false)
             {
-                resource.Type = Database.GetType(autoCompleteBoxTypes.Text);
+                resource.Type = tw.database.GetType(autoCompleteBoxTypes.Text);
                 
 
                 // Set the default type icon
@@ -120,7 +121,7 @@ namespace ResourcesApplication
                 Console.WriteLine("duzina liste tagova");
                 Console.WriteLine(SelectedTags.Count());
                 Resource.Tags = new ObservableCollection<ResourceTag>(SelectedTags);
-                Database.AddResource(resource);
+                tw.database.AddResource(resource);
                 Close();
                 tw.addToResourcesToShow();
             }
@@ -152,23 +153,23 @@ namespace ResourcesApplication
         private void buttonAddNewTag_Click(object sender, RoutedEventArgs e)
         {
             // if it hasn't been found in database, open dialog to add it
-            if (Database.GetTag(autoCompleteBoxTags.Text) == null)
+            if (tw.database.GetTag(autoCompleteBoxTags.Text) == null)
             {
                 AddTag dialog;
                 if (string.IsNullOrWhiteSpace(autoCompleteBoxTags.Text))
                 {
-                    dialog = new AddTag();
+                    dialog = new AddTag(tw);
                 }
                 else
                 {
-                    dialog = new AddTag(autoCompleteBoxTags.Text);
+                    dialog = new AddTag(autoCompleteBoxTags.Text,tw);
                 }
                 dialog.ShowDialog();
 
                 // If it has successfully added a new tag
                 if (dialog.DialogResult.HasValue && dialog.DialogResult.Value)
                 {
-                    ResourceTag tag = new ResourceTag(Database.getInstance().Tags.Last());
+                    ResourceTag tag = new ResourceTag(tw.database.Tags.Last());
 
                     // make sure tag is't already added
                     bool found = false;
@@ -191,7 +192,7 @@ namespace ResourcesApplication
             // if it has been found in database
             else
             {
-                ResourceTag tag = new ResourceTag(Database.GetTag(autoCompleteBoxTags.Text));
+                ResourceTag tag = new ResourceTag(tw.database.GetTag(autoCompleteBoxTags.Text));
 
                 // make sure tag is't already added
                 bool found = false;
@@ -218,7 +219,7 @@ namespace ResourcesApplication
         private void buttonAddNewType_Click(object sender, RoutedEventArgs e)
         {
 
-            AddType addType = new AddType(autoCompleteBoxTypes.Text);
+            AddType addType = new AddType(autoCompleteBoxTypes.Text,tw);
             addType.ShowDialog();
 
             /*
@@ -239,7 +240,7 @@ namespace ResourcesApplication
         {
             if (e.Key == Key.Enter)
             {
-                if (Database.GetType(autoCompleteBoxTypes.Text) == null)
+                if (tw.database.GetType(autoCompleteBoxTypes.Text) == null)
                 {
                     buttonAddNewType_Click(null, null);
                 }
@@ -249,7 +250,7 @@ namespace ResourcesApplication
         private void autoCompleteBoxTypes_LostFocus(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(autoCompleteBoxTypes.Text)
-                || Database.GetType(autoCompleteBoxTypes.Text) == null)
+                || tw.database.GetType(autoCompleteBoxTypes.Text) == null)
             {
                // textBoxTypeError.Visibility = System.Windows.Visibility.Visible;
             }

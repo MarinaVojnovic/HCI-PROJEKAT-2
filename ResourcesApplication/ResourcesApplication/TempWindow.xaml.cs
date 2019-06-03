@@ -32,6 +32,7 @@ namespace ResourcesApplication
          *  EUROPE
          *  ASIA
          */
+        public Database database { get; set; }
         private ObservableCollection<Resource> resources;
         public ObservableCollection<Resource> Resources
         {
@@ -91,28 +92,18 @@ namespace ResourcesApplication
         private Resource ClickedResource;
         public TempWindow(string map)
         {
-            SerializationService.RESOURCES_DATA = map + ".bin";
-            DeserializationService.RESOURCES_DATA = map + ".bin";
-            //MessageBox.Show("MAPA: " + map);
             InitializeComponent();
-            Database.loadData();
+            database = new Database();
+            database.ser.RESOURCES_DATA = map + ".bin";
+            database.der.RESOURCES_DATA = map + ".bin";
+            database.loadData();
             CURRENT_MAP = map;
 
             DataContext = this;
-            Resources = Database.getInstance().Resources;
-            ResourcesType = Database.getInstance().Types;
+            Resources = database.Resources;
+            ResourcesType = database.Types;
+            addToResourcesToShow();
             ResourcePins_Draw();
-            ResourcesToShow = new ObservableCollection<Resource>();
-
-            foreach (Resource r in Resources)
-            {
-                if (r.X == -1 && r.Y == -1)
-                {
-                    ResourcesToShow.Add(r);
-                }
-
-
-            }
         }
 
         private void AddResource_Executed(object sender, ExecutedRoutedEventArgs e)
@@ -144,7 +135,7 @@ namespace ResourcesApplication
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            AddTag addTag = new AddTag();
+            AddTag addTag = new AddTag(this);
             addTag.Show();
         }
 
@@ -166,24 +157,24 @@ namespace ResourcesApplication
         }
         private void ShowTypes_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            ShowTypes showTypes = new ShowTypes();
+            ShowTypes showTypes = new ShowTypes(this);
             showTypes.Show();
         }
 
         private void AddTag_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            AddTag addTag = new AddTag();
+            AddTag addTag = new AddTag(this);
             addTag.Show();
         }
         private void ShowTags_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            ShowTags showTags = new ShowTags();
+            ShowTags showTags = new ShowTags(this);
             showTags.Show();
         }
 
         private void AddType_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            AddType addType = new AddType();
+            AddType addType = new AddType(this);
             addType.Show();
         }
 
@@ -191,7 +182,7 @@ namespace ResourcesApplication
 
         private void ShowResources_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            ShowResources showResources = new ShowResources();
+            ShowResources showResources = new ShowResources(this);
             showResources.Show();
         }
 
@@ -276,7 +267,7 @@ namespace ResourcesApplication
                 }
 
                 Console.WriteLine("Na kraju petog resourcePinX" + resourcePin.X + " resourcePin.Y " + resourcePin.Y);
-                Database.UpdateResource(resourcePin.Id, resourcePin);
+                database.UpdateResource(resourcePin.Id, resourcePin);
                 ResourcePins_Draw();
             }
         }
@@ -512,14 +503,18 @@ namespace ResourcesApplication
                 Console.WriteLine("Na kraju petog resourcePinX" + resourcePin.X + " resourcePin.Y " + resourcePin.Y);
                 if (!(Resources.Contains(resourcePin)))
                 {
-                    Database.AddResource(resourcePin);
+                    database.AddResource(resourcePin);
                 }
 
-                Database.UpdateResource(resourcePin.Id, resourcePin);
+                database.UpdateResource(resourcePin.Id, resourcePin);
                 
                 
                 ResourcePins_Draw();
 
+            }
+            else
+            {
+                MessageBox.Show("Da biste nalepili resurs ovde prvo trebate da ga kopirate.");
             }
 
         }
@@ -551,7 +546,7 @@ namespace ResourcesApplication
 
             if (r != null)
             {
-                Database.UpdateResource(r.Id, r);
+                database.UpdateResource(r.Id, r);
                 ResourcesToShow.Add(r);
             }
 

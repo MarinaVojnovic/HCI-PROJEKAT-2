@@ -21,6 +21,8 @@ namespace ResourcesApplication
     /// </summary>
     public partial class EditType : Window
     {
+
+        public TempWindow tw { get; set; }
         private ResourceType type;
         public ResourceType Type
         {
@@ -39,7 +41,7 @@ namespace ResourcesApplication
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
 
             oldId = typeId;
-            type = new ResourceType(Database.GetType(typeId));
+            type = new ResourceType(tw.database.GetType(typeId));
             DataContext = type;
 
             idError = false;
@@ -94,7 +96,7 @@ namespace ResourcesApplication
                 iconPathError == false &&
                 descriptionError == false)
             {
-                Database.UpdateType(oldId, type);
+                tw.database.UpdateType(oldId, type);
                 Close();
             }
         }

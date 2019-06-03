@@ -10,10 +10,11 @@ using System.Threading.Tasks;
 namespace ResourcesApplication.Beans
 {
     [Serializable]
-    class Database : INotifyPropertyChanged
+    public class Database : INotifyPropertyChanged
     {
+        public SerializationService ser { get; set; }
+        public DeserializationService der { get; set; }
 
-        private static Database instance = null;
 
         private ObservableCollection<Resource> resources;
         public ObservableCollection<Resource> Resources
@@ -25,6 +26,20 @@ namespace ResourcesApplication.Beans
                 {
                     resources = value;
                     OnPropertyChanged("Resources");
+                }
+            }
+        }
+
+        private ObservableCollection<Resource> allResources;
+        public ObservableCollection<Resource> AllResources
+        {
+            get { return allResources; }
+            set
+            {
+                if (value != allResources)
+                {
+                    allResources = value;
+                    OnPropertyChanged("AllResources");
                 }
             }
         }
@@ -44,7 +59,7 @@ namespace ResourcesApplication.Beans
         }
 
         private ObservableCollection<ResourceTag> tags;
-        public static DeserializationService DeserialiationService { get; set; }
+
 
         public ObservableCollection<ResourceTag> Tags
         {
@@ -59,166 +74,162 @@ namespace ResourcesApplication.Beans
             }
         }
 
-        public static SerializationService SerializationService{ get; set; }
 
-        private Database()
+        public Database()
         {
+            ser = new SerializationService();
+            der = new DeserializationService();
             resources = new ObservableCollection<Resource>();
+            allResources = new ObservableCollection<Resource>();
             types = new ObservableCollection<ResourceType>();
             tags = new ObservableCollection<ResourceTag>();
         }
 
-        public static Database getInstance()
+
+        public void SaveResources()
         {
-            if (instance == null)
-            {
-                instance = new Database();
-            }
-            return instance;
+            ser.serializeResource(resources);
+            ser.serializeAllResources(allResources);
         }
 
-        public static void SaveResources()
+        public void SaveTypes()
         {
-            SerializationService.serializeResource(getInstance().resources);
+            ser.serializeTypes(types);
         }
 
-        public static void SaveTypes()
+        public void SaveTags()
         {
-            SerializationService.serializeTypes(getInstance().types);
+            ser.serializeTags(tags);
         }
 
-        public static void SaveTags()
+        public void AddResource(Resource resource)
         {
-            SerializationService.serializeTags(getInstance().tags);
-        }
-
-        public static void AddResource(Resource resource)
-        {
-            getInstance().resources.Add(resource);
+            resources.Add(resource);
+            allResources.Add(resource);
             SaveResources();
         }
 
-        public static void AddType(ResourceType type)
+        public void AddType(ResourceType type)
         {
-            getInstance().types.Add(type);
+            types.Add(type);
             SaveTypes();
         }
 
-        public static void AddTag(ResourceTag tag)
+        public void AddTag(ResourceTag tag)
         {
-            getInstance().tags.Add(tag);
+            tags.Add(tag);
             SaveTags();
         }
 
-        public static Resource GetResource(string id)
+        public Resource GetResource(string id)
         {
-            for (int i = 0; i < getInstance().Resources.Count; i++)
+            for (int i = 0; i < Resources.Count; i++)
             {
-                if (getInstance().Resources[i].Id.Equals(id))
+                if (Resources[i].Id.Equals(id))
                 {
-                    return getInstance().Resources[i];
+                    return Resources[i];
                 }
             }
             return null;
         }
 
-        public static ResourceType GetType(string id)
+        public ResourceType GetType(string id)
         {
-            for (int i = 0; i < getInstance().Types.Count; i++)
+            for (int i = 0; i < Types.Count; i++)
             {
-                if (getInstance().Types[i].Id.Equals(id))
+                if (Types[i].Id.Equals(id))
                 {
-                    return getInstance().Types[i];
+                    return Types[i];
                 }
             }
             return null;
         }
 
-        public static ResourceTag GetTag(string id)
+        public ResourceTag GetTag(string id)
         {
-            for (int i = 0; i < getInstance().Tags.Count; i++)
+            for (int i = 0; i < Tags.Count; i++)
             {
-                if (getInstance().Tags[i].Id.Equals(id))
+                if (Tags[i].Id.Equals(id))
                 {
-                    return getInstance().Tags[i];
+                    return Tags[i];
                 }
             }
             return null;
         }
 
-        public static void UpdateResource(string oldId, Resource resource)
+        public void UpdateResource(string oldId, Resource resource)
         {
-            for (int i = 0; i < getInstance().Resources.Count; i++)
+            for (int i = 0; i < Resources.Count; i++)
             {
-                if (oldId.Equals(getInstance().Resources[i].Id))
+                if (oldId.Equals(Resources[i].Id))
                 {
-                    getInstance().Resources[i] = resource;
+                    Resources[i] = resource;
                     SaveResources();
                     break;
                 }
             }
         }
 
-        public static void UpdateType(string oldId, ResourceType type)
+        public void UpdateType(string oldId, ResourceType type)
         {
-            for (int i = 0; i < getInstance().Types.Count; i++)
+            for (int i = 0; i < Types.Count; i++)
             {
-                if (oldId.Equals(getInstance().Types[i].Id))
+                if (oldId.Equals(Types[i].Id))
                 {
-                    getInstance().Types[i] = type;
+                    Types[i] = type;
                     SaveTypes();
                     break;
                 }
             }
         }
 
-        public static void UpdateTag(string oldId, ResourceTag tag)
+        public void UpdateTag(string oldId, ResourceTag tag)
         {
-            for (int i = 0; i < getInstance().Tags.Count; i++)
+            for (int i = 0; i < Tags.Count; i++)
             {
-                if (oldId.Equals(getInstance().Tags[i].Id))
+                if (oldId.Equals(Tags[i].Id))
                 {
                     Console.WriteLine("Uslo u updatee");
-                    getInstance().Tags[i] = tag;
+                    Tags[i] = tag;
                     SaveTags();
                     break;
                 }
             }
         }
 
-        public static void DeleteResource(Resource resource)
+        public void DeleteResource(Resource resource)
         {
-            for (int i = 0; i < getInstance().Resources.Count; i++)
+            for (int i = 0; i < Resources.Count; i++)
             {
-                if (resource.Id.Equals(getInstance().Resources[i].Id))
+                if (resource.Id.Equals(Resources[i].Id))
                 {
-                    getInstance().Resources.RemoveAt(i);
+                    Resources.RemoveAt(i);
                     SaveResources();
                     break;
                 }
             }
         }
 
-        public static void DeleteType(ResourceType type)
+        public void DeleteType(ResourceType type)
         {
-            for (int i = 0; i < getInstance().Types.Count; i++)
+            for (int i = 0; i < Types.Count; i++)
             {
-                if (type.Id.Equals(getInstance().Types[i].Id))
+                if (type.Id.Equals(Types[i].Id))
                 {
-                    getInstance().Types.RemoveAt(i);
+                    Types.RemoveAt(i);
                     SaveTypes();
                     break;
                 }
             }
         }
 
-        public static void DeleteTag(ResourceTag tag)
+        public void DeleteTag(ResourceTag tag)
         {
-            for (int i = 0; i < getInstance().Tags.Count; i++)
+            for (int i = 0; i < Tags.Count; i++)
             {
-                if (tag.Id.Equals(getInstance().Tags[i].Id))
+                if (tag.Id.Equals(Tags[i].Id))
                 {
-                    getInstance().Tags.RemoveAt(i);
+                    Tags.RemoveAt(i);
                     SaveTags();
                     break;
                 }
@@ -226,14 +237,15 @@ namespace ResourcesApplication.Beans
         }
 
 
-        
-        public static void loadData()
+
+        public void loadData()
         {
-            DeserializationService.deserializeTags();
-            DeserializationService.deserializeTypes();
-            DeserializationService.deserializeResources();
+            der.deserializeTags(this);
+            der.deserializeTypes(this);
+            der.deserializeResources(this);
+            der.deserializeAllResources(this);
         }
-        
+
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string name)

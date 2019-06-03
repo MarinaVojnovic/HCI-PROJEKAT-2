@@ -25,6 +25,7 @@ namespace ResourcesApplication
     /// </summary>
     public partial class ShowTags : Window, INotifyPropertyChanged
     {
+        public TempWindow tw { get; set; }
         private ObservableCollection<ResourceTag> tags;
         public ObservableCollection<ResourceTag> Tags
         {
@@ -40,16 +41,17 @@ namespace ResourcesApplication
         }
 
         public ResourceTag SelectedTag { get; set; }
-        public ShowTags()
+        public ShowTags(TempWindow t)
         {
+            tw = t;
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
 
             SelectedTag = null;
             DataContext = this;
             Console.WriteLine("hejj");
-            Database.loadData();
-            Tags = Database.getInstance().Tags;
+            tw.database.loadData();
+            Tags = tw.database.Tags;
             Console.WriteLine(Tags.Count());
 
         }
@@ -95,7 +97,7 @@ namespace ResourcesApplication
 
         private bool resourcesHaveTag(string Id)
         {
-            foreach (var res in Database.getInstance().Resources)
+            foreach (var res in tw.database.Resources)
             {
                 foreach (var tag in res.Tags)
                 {

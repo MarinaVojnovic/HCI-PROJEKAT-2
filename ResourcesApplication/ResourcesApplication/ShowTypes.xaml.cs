@@ -21,6 +21,7 @@ namespace ResourcesApplication
     /// </summary>
     public partial class ShowTypes : Window
     {
+        public TempWindow tw { get; set; }
         public ResourceType SelectedType { get; set; }
         private ObservableCollection<ResourceType> types;
         public ObservableCollection<ResourceType> Types
@@ -35,14 +36,15 @@ namespace ResourcesApplication
                 }
             }
         }
-        public ShowTypes()
+        public ShowTypes(TempWindow t)
         {
+            tw = t;
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             SelectedType = null;
             DataContext = this;
-            Database.loadData();
-            Types = Database.getInstance().Types;
+            tw.database.loadData();
+            Types = tw.database.Types;
         }
 
 

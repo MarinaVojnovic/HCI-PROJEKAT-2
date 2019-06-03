@@ -25,6 +25,7 @@ namespace ResourcesApplication
     /// </summary>
     public partial class ShowResources : Window
     {
+        public TempWindow tw { get; set; }
        
         private ObservableCollection<Resource> resources;
         public ObservableCollection<Resource> Resources
@@ -41,14 +42,15 @@ namespace ResourcesApplication
         }
 
         public Resource SelectedResource { get; set; }
-        public ShowResources()
+        public ShowResources(TempWindow t)
         {
+            tw = t;
             InitializeComponent();
            
             SelectedResource = null;
             DataContext = this;
             
-            Resources = Database.getInstance().Resources;
+            Resources = tw.database.Resources;
         }
 
         private void resourcesGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)

@@ -13,11 +13,15 @@ namespace ResourcesApplication.Validation
     {
         public override ValidationResult Validate(object value, System.Globalization.CultureInfo cultureInfo)
         {
+            Database db = new Database();
+            db.ser.RESOURCES_DATA = "resources.bin";
+            db.der.RESOURCES_DATA = "resources.bin";
+            db.loadData();
             try
             {
                 var text = value as string;
 
-                foreach (ResourceTag tag in Database.getInstance().Tags)
+                foreach (ResourceTag tag in db.Tags)
                 {
                     if (tag.Id.Equals(text))
                     {

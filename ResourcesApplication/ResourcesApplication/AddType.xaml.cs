@@ -20,6 +20,7 @@ namespace ResourcesApplication
     /// </summary>
     public partial class AddType : Window
     {
+        public TempWindow tw { get; set; }
 
         private ResourceType type;
         public ResourceType Type
@@ -34,8 +35,9 @@ namespace ResourcesApplication
         private bool descriptionError;
       
 
-        public AddType()
+        public AddType(TempWindow t)
         {
+            tw = t;
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
 
@@ -48,8 +50,9 @@ namespace ResourcesApplication
             descriptionError = false;
         }
 
-        public AddType(string id)
+        public AddType(string id,TempWindow t)
         {
+            tw = t;
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
 
@@ -125,7 +128,7 @@ namespace ResourcesApplication
                 iconPathError == false &&
                 descriptionError == false)
             {
-                Database.AddType(type);
+                tw.database.AddType(type);
                 Close();
             }
         }

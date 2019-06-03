@@ -20,6 +20,7 @@ namespace ResourcesApplication
     /// </summary>
     public partial class AddTag : Window
     {
+        public TempWindow tw { get; set; }
         public ResourceTag Tagg // Tag name Overshadows Tag from .NET library
         {
             get { return tag; }
@@ -37,8 +38,9 @@ namespace ResourcesApplication
             tag.Color = ColorPicker.SelectedColor.ToString();
         }
 
-        public AddTag()
+        public AddTag(TempWindow t)
         {
+            tw = t;
             
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
@@ -52,8 +54,9 @@ namespace ResourcesApplication
 
         }
 
-        public AddTag(string id)
+        public AddTag(string id,TempWindow t)
         {
+            tw = t;
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
 
@@ -94,7 +97,7 @@ namespace ResourcesApplication
 
             if (idError == false && descriptionError == false)
             {
-                Database.AddTag(Tagg);
+                tw.database.AddTag(Tagg);
                
                 Close();
             }

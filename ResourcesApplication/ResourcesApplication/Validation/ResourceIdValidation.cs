@@ -13,11 +13,15 @@ namespace ResourcesApplication.Validation
     {
         public override ValidationResult Validate(object value, System.Globalization.CultureInfo cultureInfo)
         {
+            Database db = new Database();
+            db.ser.RESOURCES_DATA = "resources.bin";
+            db.der.RESOURCES_DATA = "resources.bin";
+            db.loadData();
             try
             {
                 var text = value as string;
 
-                foreach (Resource res in Database.getInstance().Resources)
+                foreach (Resource res in db.Resources)
                 {
                     if (res.Id.Equals(text))
                     {
@@ -32,5 +36,6 @@ namespace ResourcesApplication.Validation
                 return new ValidationResult(false, "Desila se neočekivana greška");
             }
         }
+        }
     }
-}
+
