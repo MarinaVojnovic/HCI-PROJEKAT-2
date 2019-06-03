@@ -40,8 +40,8 @@ namespace ResourcesApplication
             }
         }
 
-        
 
+        private TempWindow tw;
         private ObservableCollection<ResourceTag> selectedTags;
         public ObservableCollection<ResourceTag> SelectedTags
         {
@@ -60,8 +60,9 @@ namespace ResourcesApplication
         private bool nameError;
         private bool descriptionError;
         private bool publicError;
-        public AddResource()
+        public AddResource(TempWindow t)
         {
+            tw = t;
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
 
@@ -121,6 +122,7 @@ namespace ResourcesApplication
                 Resource.Tags = new ObservableCollection<ResourceTag>(SelectedTags);
                 Database.AddResource(resource);
                 Close();
+                tw.addToResourcesToShow();
             }
 
         }

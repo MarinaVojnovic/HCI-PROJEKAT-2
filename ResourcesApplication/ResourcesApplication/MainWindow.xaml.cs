@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+using ResourcesApplication.Beans;
+
 namespace ResourcesApplication
 {
     /// <summary>
@@ -19,8 +21,10 @@ namespace ResourcesApplication
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static Resource resourceForCopy;
         public MainWindow()
         {
+            resourceForCopy = null;
             InitializeComponent();
         }
 

@@ -103,7 +103,6 @@ namespace ResourcesApplication
             ResourcesType = Database.getInstance().Types;
             ResourcePins_Draw();
             ResourcesToShow = new ObservableCollection<Resource>();
-            resourceForCopy = null;
 
             foreach (Resource r in Resources)
             {
@@ -118,8 +117,29 @@ namespace ResourcesApplication
 
         private void AddResource_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            AddResource addResource = new AddResource();
+            AddResource addResource = new AddResource(this);
             addResource.Show();
+            
+            
+        }
+
+        public void addToResourcesToShow()
+        {
+            ResourcesToShow = new ObservableCollection<Resource>();
+            foreach (Resource r in Resources)
+            {
+
+                if (r.X == -1 && r.Y == -1)
+                {
+                    ResourcesToShow.Add(r);
+                }
+
+
+            }
+
+            listView.ItemsSource = null;
+            listView.ItemsSource = ResourcesToShow;
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -136,7 +156,7 @@ namespace ResourcesApplication
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            AddResource type = new AddResource();
+            AddResource type = new AddResource(this);
             type.Show();
         }
 
@@ -189,7 +209,7 @@ namespace ResourcesApplication
 
         }
         private Point startPoint = new Point();
-        private Resource resourceForCopy;
+        
 
         private void Map_MouseMove(object sender, MouseEventArgs e)
 
@@ -453,18 +473,18 @@ namespace ResourcesApplication
 
             if (r != null)
             {
-                resourceForCopy = r;
+                MainWindow.resourceForCopy = r;
             }
 
         }
 
         public void paste_Click(Object sender, RoutedEventArgs e)
         {
-            if (resourceForCopy != null)
+            if (MainWindow.resourceForCopy != null)
             {
                 Point pointToWindow = Mouse.GetPosition(this);
                 pointToWindow.X -= 250;
-                Resource resourcePin = resourceForCopy;
+                Resource resourcePin = MainWindow.resourceForCopy;
                 Resource resourceOnThatPosition = Resource_Click((int)pointToWindow.X, (int)pointToWindow.Y);
 
                 if (resourceOnThatPosition != null && !resourcePin.Id.Equals(resourceOnThatPosition.Id))
@@ -490,7 +510,14 @@ namespace ResourcesApplication
                 }
 
                 Console.WriteLine("Na kraju petog resourcePinX" + resourcePin.X + " resourcePin.Y " + resourcePin.Y);
+                if (!(Resources.Contains(resourcePin)))
+                {
+                    Database.AddResource(resourcePin);
+                }
+
                 Database.UpdateResource(resourcePin.Id, resourcePin);
+                
+                
                 ResourcePins_Draw();
 
             }
@@ -520,16 +547,15 @@ namespace ResourcesApplication
                 }
 
             }
+            
 
             if (r != null)
             {
+                Database.UpdateResource(r.Id, r);
                 ResourcesToShow.Add(r);
             }
 
             ResourcePins_Draw();
-
-
-
         }
     }
 }

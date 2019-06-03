@@ -90,7 +90,7 @@
 
                 <GroupBox ToolTip="Lista resursa koji mogu biti dodati na mapu" Header="Resursi" Height="670" Margin="10,0" Foreground="White" >
                     <!--PreviewMouseLeftButtonDown="ListView_PreviewMouseLeftButtonDown" MouseMove="ListView_MouseMove"-->
-                    <ListView Name="listView" SelectedItem="{Binding Path=SelectedResource, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Path=ResourcesToShow}"  Margin="0,0,-2,0" Background="Black" SelectionChanged="listView_SelectionChanged" PreviewMouseLeftButtonDown="ListView_PreviewMouseLeftButtonDown" MouseMove="ListView_MouseMove">
+                    <ListView Name="listView" SelectedItem="{Binding Path=SelectedResource}" ItemsSource="{Binding Path=ResourcesToShow}"  Margin="0,0,-2,0" Background="Black" SelectionChanged="listView_SelectionChanged" PreviewMouseLeftButtonDown="ListView_PreviewMouseLeftButtonDown" MouseMove="ListView_MouseMove">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <WrapPanel>
@@ -110,7 +110,13 @@
                 <Canvas.Background>
                     <ImageBrush ImageSource="Maps\world_map.png" AlignmentX="Left" AlignmentY="Top" Stretch="None"/>
                 </Canvas.Background>
-                
+                <Canvas.ContextMenu>
+                    <ContextMenu Name="contextMenu">
+                        <MenuItem Header="Nalepi kopiran resurs" Click="paste_Click">
+                        </MenuItem>
+                    </ContextMenu>
+                </Canvas.ContextMenu>
+
             </Canvas>
         </Grid>
     </DockPanel>
