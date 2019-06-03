@@ -107,6 +107,9 @@
     <Compile Include="EditType.xaml.cs">
       <DependentUpon>EditType.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MapSearch.xaml.cs">
+      <DependentUpon>MapSearch.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ShowResources.xaml.cs">
       <DependentUpon>ShowResources.xaml</DependentUpon>
     </Compile>
@@ -181,6 +184,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MapSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ShowResources.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
