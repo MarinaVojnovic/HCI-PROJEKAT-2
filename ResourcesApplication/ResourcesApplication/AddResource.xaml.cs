@@ -40,6 +40,8 @@ namespace ResourcesApplication
             }
         }
 
+        
+
         private ObservableCollection<ResourceTag> selectedTags;
         public ObservableCollection<ResourceTag> SelectedTags
         {

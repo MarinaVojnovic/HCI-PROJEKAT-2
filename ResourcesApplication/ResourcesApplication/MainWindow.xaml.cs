@@ -34,7 +34,7 @@ namespace ResourcesApplication
             ImageBrush imgB = new ImageBrush();
             imgB.ImageSource = new System.Windows.Media.Imaging.BitmapImage(new Uri(path, UriKind.Relative));
 
-            tag.Canvas1.Fill = imgB;
+            tag.Map.Background = imgB;
             tag.Show();
         }
 
@@ -48,7 +48,7 @@ namespace ResourcesApplication
             ImageBrush imgB = new ImageBrush();
             imgB.ImageSource = new System.Windows.Media.Imaging.BitmapImage(new Uri(path, UriKind.Relative));
 
-            tag.Canvas1.Fill = imgB;
+            tag.Map.Background = imgB;
             tag.Show();
         }
 
@@ -62,7 +62,7 @@ namespace ResourcesApplication
             ImageBrush imgB = new ImageBrush();
             imgB.ImageSource = new System.Windows.Media.Imaging.BitmapImage(new Uri(path, UriKind.Relative));
 
-            tag.Canvas1.Fill = imgB;
+            tag.Map.Background = imgB;
             tag.Show();
         }
 
@@ -76,7 +76,7 @@ namespace ResourcesApplication
             ImageBrush imgB = new ImageBrush();
             imgB.ImageSource = new System.Windows.Media.Imaging.BitmapImage(new Uri(path, UriKind.Relative));
 
-            tag.Canvas1.Fill = imgB;
+            tag.Map.Background = imgB;
             tag.Show();
         }
     }

@@ -12,7 +12,7 @@ namespace ResourcesApplication.Beans
 {
     class SerializationService
     {
-        public static readonly string RESOURCES_DATA = "resources.bin";
+        public static string RESOURCES_DATA = "";
         public static readonly string TYPES_DATA = "types.bin";
         public static readonly string TAGS_DATA = "tags.bin";
 
@@ -23,6 +23,7 @@ namespace ResourcesApplication.Beans
 
             try
             {
+                
                 stream = File.Open(RESOURCES_DATA, FileMode.OpenOrCreate);
                 formatter.Serialize(stream, resource);
             }

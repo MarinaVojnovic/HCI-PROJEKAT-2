@@ -12,14 +12,14 @@ namespace ResourcesApplication.Beans
 {
     class DeserializationService
     {
-        public static readonly string RESOURCES_DATA = "resources.bin";
+        public static string RESOURCES_DATA ;
         public static readonly string TYPES_DATA = "types.bin";
         public static readonly string TAGS_DATA = "tags.bin";
         public static void deserializeResources()
         {
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = null;
-
+            Console.WriteLine("NAZIV FAJLA: " + RESOURCES_DATA);
             if (File.Exists(RESOURCES_DATA))
             {
                 try

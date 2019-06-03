@@ -90,7 +90,7 @@
 
                 <GroupBox ToolTip="Lista resursa koji mogu biti dodati na mapu" Header="Resursi" Height="670" Margin="10,0" Foreground="White" >
                     <!--PreviewMouseLeftButtonDown="ListView_PreviewMouseLeftButtonDown" MouseMove="ListView_MouseMove"-->
-                    <ListView Name="listView" SelectedItem="{Binding Path=SelectedResource, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Path=Resources}"  Margin="0,0,-2,0" Background="Black" SelectionChanged="listView_SelectionChanged">
+                    <ListView Name="listView" SelectedItem="{Binding Path=SelectedResource, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Path=ResourcesToShow}"  Margin="0,0,-2,0" Background="Black" SelectionChanged="listView_SelectionChanged" PreviewMouseLeftButtonDown="ListView_PreviewMouseLeftButtonDown" MouseMove="ListView_MouseMove">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <WrapPanel>
@@ -106,9 +106,12 @@
             </StackPanel>
 
             <!-- Mouse.PreviewMouseDown="Map_PreviewMouseLeftButtonDown" MouseRightButtonDown="Map_MouseRightButtonDown" MouseMove="Map_MouseMove" DragEnter="Map_DragEnter" Drop="Map_Drop"-->
-            <Rectangle AllowDrop="True"   Grid.Column="1" Name="Canvas1">
-
-            </Rectangle>
+            <Canvas Name="Map" AllowDrop="True" Grid.Column="1" MouseMove="Map_MouseMove" DragEnter="Map_DragEnter" Drop="Map_Drop">
+                <Canvas.Background>
+                    <ImageBrush ImageSource="Maps\world_map.png" AlignmentX="Left" AlignmentY="Top" Stretch="None"/>
+                </Canvas.Background>
+                
+            </Canvas>
         </Grid>
     </DockPanel>
 </Window>
