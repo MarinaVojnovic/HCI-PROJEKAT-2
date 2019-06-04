@@ -50,7 +50,7 @@ namespace ResourcesApplication
 
         private void typesGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            buttonEdit_Click(null, null);
+            //buttonEdit_Click(null, null);
         }
 
         private void buttonDelete_Click(object sender, RoutedEventArgs e)
@@ -87,24 +87,12 @@ namespace ResourcesApplication
             */
         }
 
-        private void buttonEdit_Click(object sender, RoutedEventArgs e)
-        {
-            if (SelectedType != null)
-            {
-                EditType editType = new EditType(SelectedType.Id);
-                editType.Show();
-            }
-            else
-            {
-                MessageBox.Show("Molimo, odaberite tip manifestacije za ažuriranje", "Ažuriranje tipa manifestacije");
-            }
-        }
+
         private void typesGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (SelectedType != null)
             {
-                buttonEdit.IsEnabled = true;
-                buttonDelete.IsEnabled = true;
+
             }
         }
 

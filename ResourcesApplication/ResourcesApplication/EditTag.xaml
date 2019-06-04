@@ -7,8 +7,8 @@
         xmlns:validation="clr-namespace:ResourcesApplication.Validation"
         xmlns:local="clr-namespace:ResourcesApplication"
         mc:Ignorable="d"
-        Title="Edit Tag" Height="300" Width="300">
-    <Grid>
+        Title="Edit Tag" Height="350" Width="300">
+    <Grid Background="LightGray">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -19,8 +19,8 @@
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0" Grid.Row="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition MaxWidth="120"/>
-                <ColumnDefinition Width="*" />
+                <ColumnDefinition MaxWidth="120" Width="18*"/>
+                <ColumnDefinition Width="55*" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="30" />
@@ -33,13 +33,13 @@
             <Label Grid.Column="0" Grid.Row="1" Content="Color:" />
             <Label Grid.Column="0" Grid.Row="2" Content="Description:" />
 
-            <TextBox Name="textBoxId"  IsEnabled="False" Validation.Error="textBoxId_Error" ToolTip="Enter unique id of tag"  Grid.Column="1" Grid.Row="0" VerticalContentAlignment="Center" Margin="3">
+            <TextBox Name="textBoxId"  IsEnabled="False" Validation.Error="textBoxId_Error" ToolTip="Unos jedinstvene oznake za id"  Grid.Column="1" Grid.Row="0" VerticalContentAlignment="Center" Margin="3">
                 <TextBox.Text>
                     <Binding Path="Id" UpdateSourceTrigger="LostFocus" NotifyOnValidationError="True">
                         <Binding.ValidationRules>
                             <validation:LengthValidation ValidationStep="RawProposedValue" Min="3" Max="30" />
                             <validation:ContentValidation ValidationStep="RawProposedValue" />
-                        
+
                         </Binding.ValidationRules>
                     </Binding>
                 </TextBox.Text>
@@ -60,8 +60,8 @@
                     </ControlTemplate>
                 </Validation.ErrorTemplate>
             </TextBox>
-            <wpfTool:ColorPicker Name ="ColorPicker" SelectedColorChanged="ColorPicker_SelectedColorChanged"  ToolTip="Pick a color of tag" Grid.Column="1" Grid.Row="1" VerticalContentAlignment="Center" Margin="3"/>
-            <TextBox Name="textBoxDescription" MaxLength="1000" TextWrapping="Wrap"  Validation.Error="textBoxDescription_Error"  AcceptsReturn="True" Grid.Column="1" Grid.Row="2" ToolTip="Description of tag" VerticalScrollBarVisibility="Auto" Margin="3,3,3,10" >
+            <wpfTool:ColorPicker Name ="ColorPicker" SelectedColorChanged="ColorPicker_SelectedColorChanged"  ToolTip="Izbor boje taga" Grid.Column="1" Grid.Row="1" VerticalContentAlignment="Center" Margin="3"/>
+            <TextBox Name="textBoxDescription" MaxLength="1000" TextWrapping="Wrap"  Validation.Error="textBoxDescription_Error"  AcceptsReturn="True" Grid.Column="1" Grid.Row="2" ToolTip="Unos opisa taga" VerticalScrollBarVisibility="Auto" Margin="3,3,3,10" >
                 <TextBox.Text>
                     <Binding Path="Description" UpdateSourceTrigger="LostFocus">
                         <Binding.ValidationRules>
@@ -87,9 +87,9 @@
                 </Validation.ErrorTemplate>
             </TextBox>
         </Grid>
-        <StackPanel Grid.Column="0" Grid.Row="3" Orientation="Horizontal" >
-            <Button Name="buttonSave" IsEnabled="True"  Click="buttonSave_Click" Content="Save" Margin="0,0,0,0" Padding="10,5" Background="LightGray" />
-            <Button Name="buttonCancel" Click="buttonCancel_Click" ToolTip="Odustajanje od unosa podataka" Content="Cancel" Margin="10,0,0,0" Padding="5,5" />
+        <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal" Margin="84,59,84,-59" >
+            <Button Name="buttonSave" IsEnabled="True"  Click="buttonSave_Click" Content="Save" Margin="0,0,0,0" Padding="10,5" Background="LightGreen" />
+            <Button x:Name="buttonCancel" Click="buttonCancel_Click" ToolTip="Odustajanje od izmene taga" Content="Cancel" Background="LightCoral" Margin="10,0,0,0" Padding="5,5" RenderTransformOrigin="0.694,2.072" />
         </StackPanel>
     </Grid>
 

@@ -16,6 +16,12 @@
         <CommandBinding Command="cmd:RoutedCommands.ShowTypes" Executed="ShowTypes_Executed"/>
         <CommandBinding Command="cmd:RoutedCommands.AddResource" Executed="AddResource_Executed"/>
         <CommandBinding Command="cmd:RoutedCommands.ShowResources" Executed="ShowResources_Executed"/>
+        <CommandBinding Command="cmd:RoutedCommands.EditResources" Executed="EditResources_Executed"/>
+        <CommandBinding Command="cmd:RoutedCommands.DeleteResources" Executed="DeleteResources_Executed"/>
+        <CommandBinding Command="cmd:RoutedCommands.EditTypes" Executed="EditTypes_Executed"/>
+        <CommandBinding Command="cmd:RoutedCommands.DeleteTypes" Executed="DeleteTypes_Executed"/>
+        <CommandBinding Command="cmd:RoutedCommands.EditTags" Executed="EditTags_Executed"/>
+        <CommandBinding Command="cmd:RoutedCommands.DeleteTags" Executed="DeleteTags_Executed"/>
     </Window.CommandBindings>
     <DockPanel>
         <Menu DockPanel.Dock ="Top" Height="25">
@@ -25,43 +31,82 @@
                 </ItemsPanelTemplate>
             </Menu.ItemsPanel>
             <MenuItem Header=" Resursi" ToolTip="Prikaz svih opcija za manipulisanje resursima">
-                <MenuItem Header=" Dodaj resurs" ToolTip="Dodavanje nove manifestacije" Command="cmd:RoutedCommands.AddResource" InputGestureText="Ctrl+R">
+                <MenuItem Header=" Dodaj" ToolTip="Dodavanje novog resursa" Command="cmd:RoutedCommands.AddResource" InputGestureText="Ctrl+R">
                     <MenuItem.Icon>
                         <Image Source="Icons\AddIcon.png" Width="12" Height="12"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator></Separator>
-                <MenuItem Header=" Prikaz resursa" ToolTip="Prikaz svih resursa" Command="cmd:RoutedCommands.ShowResources" InputGestureText="Alt+R">
+                <MenuItem Header=" Prikazi" ToolTip="Prikaz svih resursa" Command="cmd:RoutedCommands.ShowResources" InputGestureText="Alt+R">
                     <MenuItem.Icon>
                         <Image Source="Icons\TableIcon.png" Width="12" Height="12"/>
                     </MenuItem.Icon>
                 </MenuItem>
+                <MenuItem Header="Izmeni" ToolTip="Izmena resursa" Command="cmd:RoutedCommands.EditResources" InputGestureText="Ctrl+A">
+                    <MenuItem.Icon>
+                        <Image Source="Icons\EditIcon.png" Width="12" Height="12"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="Obrisi" ToolTip="Brisanje resursa" Command="cmd:RoutedCommands.DeleteResources" InputGestureText="Ctrl+B">
+                    <MenuItem.Icon>
+                        <Image Source="Icons\DeleteIcon.png" Width="12" Height="12"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator></Separator>
             </MenuItem>
-            <MenuItem Header=" Tip resursa" ToolTip="Prikaz svih opcija za manipulisanje tipovima resursa">
-                <MenuItem Header=" Dodaj tip resursa" ToolTip="Dodavanje novog tipa resursa" Command="cmd:RoutedCommands.AddType" InputGestureText="Ctrl+T">
+
+
+
+            <MenuItem Header=" Tipovi resursa" ToolTip="Prikaz svih opcija za manipulisanje tipovima resursa">
+                <MenuItem Header=" Dodaj" ToolTip="Dodavanje novog tipa resursa" Command="cmd:RoutedCommands.AddType" InputGestureText="Ctrl+T">
                     <MenuItem.Icon>
                         <Image Source="Icons\AddIcon.png" Width="12" Height="12"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator></Separator>
-                <MenuItem Header=" Prikaz tipova resursa" ToolTip="Prikaz svih tipova resursa" Command="cmd:RoutedCommands.ShowTypes" InputGestureText="Alt+T">
+                <MenuItem Header=" Prikazi" ToolTip="Prikaz svih tipova resursa" Command="cmd:RoutedCommands.ShowTypes" InputGestureText="Alt+T">
                     <MenuItem.Icon>
                         <Image Source="Icons\TableIcon.png" Width="12" Height="12"/>
                     </MenuItem.Icon>
                 </MenuItem>
+                <MenuItem Header="Izmeni" ToolTip="Izmena tipova resursa" Command="cmd:RoutedCommands.EditTypes" InputGestureText="Ctrl+T">
+                    <MenuItem.Icon>
+                        <Image Source="Icons\EditIcon.png" Width="12" Height="12"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="Obrisi" ToolTip="Brisanje tipova resursa" Command="cmd:RoutedCommands.DeleteTypes" InputGestureText="Ctrl+T">
+                    <MenuItem.Icon>
+                        <Image Source="Icons\DeleteIcon.png" Width="12" Height="12"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator></Separator>
             </MenuItem>
             <MenuItem Header=" Etikete" ToolTip="Prikaz svih opcija za manipulisanje etiketama">
-                <MenuItem Header=" Dodaj etiketu" ToolTip="Dodavanje nove etikete" Command="cmd:RoutedCommands.AddTag" InputGestureText="Ctrl+E">
+                <MenuItem Header=" Dodaj" ToolTip="Dodavanje nove etikete" Command="cmd:RoutedCommands.AddTag" InputGestureText="Ctrl+E">
                     <MenuItem.Icon>
                         <Image Source="Icons\AddIcon.png" Width="12" Height="12"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator></Separator>
-                <MenuItem Header="_Prikaži etikete" ToolTip="Prikaz svih etiketa" Command="cmd:RoutedCommands.ShowTags" InputGestureText="Alt+E">
+                <MenuItem Header="Prikaži" ToolTip="Prikaz svih etiketa" Command="cmd:RoutedCommands.ShowTags" InputGestureText="Alt+E">
                     <MenuItem.Icon>
                         <Image Source="Icons\TableIcon.png" Width="12" Height="12"/>
                     </MenuItem.Icon>
                 </MenuItem>
+                <MenuItem Header="Uredi" ToolTip="Izmena etiketa" Command="cmd:RoutedCommands.EditTags" InputGestureText="Alt+E">
+                    <MenuItem.Icon>
+                        <Image Source="Icons\EditIcon.png" Width="12" Height="12"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="Obrisi" ToolTip="Brisanje etiketa" Command="cmd:RoutedCommands.DeleteTags" InputGestureText="Alt+E">
+                    <MenuItem.Icon>
+                        <Image Source="Icons\DeleteIcon.png" Width="12" Height="12"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator></Separator>
             </MenuItem>
             <!-- 
         <MenuItem Header=" Pomoć" ToolTip="Prikaz pomoćne dokumentacije" HorizontalAlignment="Right">

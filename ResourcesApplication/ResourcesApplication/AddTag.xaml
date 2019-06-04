@@ -24,7 +24,7 @@
                 <RowDefinition Height="30"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
-        
+
             <Label Grid.Column="0" Grid.Row="0" Content="Id:"/>
             <TextBox Name="textBoxId" MaxLength="55" Validation.Error="textBoxId_Error" TextChanged="textBoxId_TextChanged" ToolTip="Unos etikete manifestacija" Grid.Column="1" Grid.Row="0" VerticalContentAlignment="Center" Margin="3">
                 <TextBox.Text>
@@ -83,8 +83,8 @@
                 </Validation.ErrorTemplate>
 
             </TextBox>
-            
-          
+
+
         </Grid>
 
         <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal" Background="LightGray">
@@ -92,6 +92,6 @@
             <Button Name="buttonCancel" ToolTip="Odustajanje od unosa podataka"  Content="Odustani" Margin="10" Padding="20,5" />
         </StackPanel>
 
-       
+
     </Grid>
 </Window>

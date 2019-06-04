@@ -21,13 +21,14 @@ namespace ResourcesApplication
     public partial class AddTag : Window
     {
         public TempWindow tw { get; set; }
-        public ResourceTag Tagg // Tag name Overshadows Tag from .NET library
+        private ResourceTag tag;
+        public ResourceTag Tag // Tag name Overshadows Tag from .NET library
         {
             get { return tag; }
             set { tag = value; }
         }
 
-        private ResourceTag tag;
+
 
         private bool idError;
         private bool descriptionError;
@@ -41,7 +42,8 @@ namespace ResourcesApplication
         public AddTag(TempWindow t)
         {
             tw = t;
-            
+
+
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
 
@@ -50,11 +52,11 @@ namespace ResourcesApplication
 
             idError = false;
             descriptionError = false;
-            
+
 
         }
 
-        public AddTag(string id,TempWindow t)
+        public AddTag(string id, TempWindow t)
         {
             tw = t;
             InitializeComponent();
@@ -66,7 +68,7 @@ namespace ResourcesApplication
 
             idError = false;
             descriptionError = false;
-           
+
         }
 
         private void textBoxId_Error(object sender, ValidationErrorEventArgs e)
@@ -97,8 +99,8 @@ namespace ResourcesApplication
 
             if (idError == false && descriptionError == false)
             {
-                tw.database.AddTag(Tagg);
-               
+                tw.database.AddTag(Tag);
+
                 Close();
             }
         }

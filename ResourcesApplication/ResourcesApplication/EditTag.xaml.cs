@@ -20,9 +20,9 @@ namespace ResourcesApplication
     /// </summary>
     public partial class EditTag : Window
     {
-        public TempWindow tw { get; set; }
+        public TempWindow temp { get; set; }
 
-       
+
         private ResourceTag tag;
         public ResourceTag Tagg
         {
@@ -35,19 +35,21 @@ namespace ResourcesApplication
         private bool descriptionError;
         public EditTag(TempWindow t)
         {
-            tw = t;
+            temp = t;
+
             InitializeComponent();
         }
 
 
-        public EditTag(string tagId)
+        public EditTag(string tagId, TempWindow t)
         {
             InitializeComponent();
+            temp = t;
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
 
             oldId = tagId;
 
-            Tagg = new ResourceTag(tw.database.GetTag(tagId));
+            Tagg = new ResourceTag(t.database.GetTag(tagId));
             if (Tagg.Color != null)
                 ColorPicker.SelectedColor = (Color)ColorConverter.ConvertFromString(tag.Color);
             DataContext = tag;
@@ -84,13 +86,13 @@ namespace ResourcesApplication
 
             if (idError == false && descriptionError == false)
             {
-                tw.database.UpdateTag(oldId, Tagg);
-             
+                temp.database.UpdateTag(oldId, Tagg);
+
                 Close();
             }
         }
 
-       
+
 
     }
 }

@@ -57,18 +57,18 @@ namespace ResourcesApplication
         }
         private void buttonEdit_Click(object sender, RoutedEventArgs e)
         {
-            
-            
+
+
             if (SelectedTag != null)
             {
-                EditTag editTag = new EditTag(SelectedTag.Id);
+                EditTag editTag = new EditTag(SelectedTag.Id, tw);
                 editTag.Show();
             }
             else
             {
                 MessageBox.Show("Molimo, odaberite etiketu za ažuriranje", "Ažuriranje etikete");
             }
-            
+
         }
 
         private void buttonDelete_Click(object sender, RoutedEventArgs e)
@@ -113,13 +113,13 @@ namespace ResourcesApplication
 
         private void tagsGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+
             if (SelectedTag != null)
             {
-                buttonEdit.IsEnabled = true;
-                buttonDelete.IsEnabled = true;
+                //buttonEdit.IsEnabled = true;
+                //buttonDelete.IsEnabled = true;
             }
-            
+
         }
 
         private void tagsGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)

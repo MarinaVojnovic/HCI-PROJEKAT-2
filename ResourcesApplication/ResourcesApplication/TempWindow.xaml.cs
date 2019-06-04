@@ -110,8 +110,9 @@ namespace ResourcesApplication
         {
             AddResource addResource = new AddResource(this);
             addResource.Show();
-            
-            
+            addToResourcesToShow();
+
+
         }
 
         public void addToResourcesToShow()
@@ -137,18 +138,20 @@ namespace ResourcesApplication
         {
             AddTag addTag = new AddTag(this);
             addTag.Show();
+            addToResourcesToShow();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            AddResourceType type = new AddResourceType();
-            type.Show();
+            //AddResourceType type = new AddResourceType();
+            //type.Show();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             AddResource type = new AddResource(this);
             type.Show();
+            addToResourcesToShow();
         }
 
         private void CommandBinding_CanExecute(object sender, CanExecuteRoutedEventArgs e)
@@ -172,10 +175,53 @@ namespace ResourcesApplication
             showTags.Show();
         }
 
+        private void DeleteResources_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            DeleteResources del = new DeleteResources(this);
+            del.Show();
+            addToResourcesToShow();
+        }
+
+        private void EditTypes_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            EditTypes edit = new EditTypes(this);
+            edit.Show();
+            addToResourcesToShow();
+        }
+
+        private void EditResources_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            EditResources edit = new EditResources(this);
+            edit.Show();
+            addToResourcesToShow();
+        }
+
+        private void EditTags_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            EditTags edit = new EditTags(this);
+            edit.Show();
+            addToResourcesToShow();
+        }
+
+        private void DeleteTypes_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            DeleteTypes edit = new DeleteTypes(this);
+            edit.Show();
+            addToResourcesToShow();
+        }
+
+        private void DeleteTags_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            DeleteTags addType = new DeleteTags(this);
+            addType.Show();
+            addToResourcesToShow();
+        }
+
         private void AddType_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             AddType addType = new AddType(this);
             addType.Show();
+            addToResourcesToShow();
         }
 
 
@@ -200,11 +246,11 @@ namespace ResourcesApplication
 
         }
         private Point startPoint = new Point();
-        
+
 
         private void Map_MouseMove(object sender, MouseEventArgs e)
 
-        { 
+        {
             Console.WriteLine("TRECI");
             Point mousePosition = e.GetPosition(Map);
             Vector diff = startPoint - mousePosition;
@@ -357,19 +403,12 @@ namespace ResourcesApplication
                     Map.Children.Add(ResourceIcon);
                     ContextMenu cm = new ContextMenu();
                     MenuItem m1 = new MenuItem();
-                    m1.Header = "Obrisi resurs";
-                    m1.Click += new RoutedEventHandler(delete_Click);
-                    MenuItem m2 = new MenuItem();
-                    m2.Header = "Izmeni resurs";
-                    m2.Click += new RoutedEventHandler(edit_Click);
                     MenuItem m3 = new MenuItem();
                     m3.Header = "Vrati resurs u listu (resurs nece biti prikazan na mapi)";
                     m3.Click += new RoutedEventHandler(return_to_list);
                     MenuItem m4 = new MenuItem();
                     m4.Header = "Kopiraj resurs na drugu mapu";
                     m4.Click += new RoutedEventHandler(copy_Click);
-                    cm.Items.Add(m1);
-                    cm.Items.Add(m2);
                     cm.Items.Add(m3);
                     cm.Items.Add(m4);
                     ResourceIcon.ContextMenu = cm;
@@ -507,8 +546,8 @@ namespace ResourcesApplication
                 }
 
                 database.UpdateResource(resourcePin.Id, resourcePin);
-                
-                
+
+
                 ResourcePins_Draw();
 
             }
@@ -542,7 +581,7 @@ namespace ResourcesApplication
                 }
 
             }
-            
+
 
             if (r != null)
             {

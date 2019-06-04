@@ -33,7 +33,7 @@ namespace ResourcesApplication
         private bool nameError;
         private bool iconPathError;
         private bool descriptionError;
-      
+
 
         public AddType(TempWindow t)
         {
@@ -50,7 +50,7 @@ namespace ResourcesApplication
             descriptionError = false;
         }
 
-        public AddType(string id,TempWindow t)
+        public AddType(string id, TempWindow t)
         {
             tw = t;
             InitializeComponent();
@@ -101,22 +101,22 @@ namespace ResourcesApplication
         }
 
 
-     
+
         private void buttonBrowse_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
             dialog.Filter = "Image files (*.png;*.jpg,*.ico)|*.ico;*.png;*.jpg";
             if (dialog.ShowDialog() == true)
             {
-                
+
                 textBoxIconPath.Text = dialog.FileName;
                 Type.IconPath = dialog.FileName;
-                
+
             }
         }
         private void buttonSave_Click(object sender, RoutedEventArgs e)
         {
-            
+
             idError = false; nameError = false; iconPathError = false; descriptionError = false;
             textBoxId.GetBindingExpression(TextBox.TextProperty).UpdateSource();
             textBoxName.GetBindingExpression(TextBox.TextProperty).UpdateSource();
