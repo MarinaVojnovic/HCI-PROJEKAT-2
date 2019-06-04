@@ -25,7 +25,6 @@ namespace ResourcesApplication
     /// </summary>
     public partial class ShowTags : Window, INotifyPropertyChanged
     {
-        public TempWindow tw { get; set; }
         private ObservableCollection<ResourceTag> tags;
         public ObservableCollection<ResourceTag> Tags
         {
@@ -41,24 +40,23 @@ namespace ResourcesApplication
         }
 
         public ResourceTag SelectedTag { get; set; }
-        public ShowTags(TempWindow t)
+        public ShowTags()
         {
-            tw = t;
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
 
             SelectedTag = null;
             DataContext = this;
             Console.WriteLine("hejj");
-            tw.database.loadData();
-            Tags = tw.database.Tags;
+            Database.loadData();
+            Tags = Database.getInstance().Tags;
             Console.WriteLine(Tags.Count());
 
         }
         private void buttonEdit_Click(object sender, RoutedEventArgs e)
         {
-            
-            
+
+
             if (SelectedTag != null)
             {
                 EditTag editTag = new EditTag(SelectedTag.Id);
@@ -68,7 +66,7 @@ namespace ResourcesApplication
             {
                 MessageBox.Show("Molimo, odaberite etiketu za ažuriranje", "Ažuriranje etikete");
             }
-            
+
         }
 
         private void buttonDelete_Click(object sender, RoutedEventArgs e)
@@ -97,7 +95,7 @@ namespace ResourcesApplication
 
         private bool resourcesHaveTag(string Id)
         {
-            foreach (var res in tw.database.Resources)
+            foreach (var res in Database.getInstance().Resources)
             {
                 foreach (var tag in res.Tags)
                 {
@@ -113,13 +111,13 @@ namespace ResourcesApplication
 
         private void tagsGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+
             if (SelectedTag != null)
             {
-                buttonEdit.IsEnabled = true;
-                buttonDelete.IsEnabled = true;
+                //buttonEdit.IsEnabled = true;
+                //buttonDelete.IsEnabled = true;
             }
-            
+
         }
 
         private void tagsGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)

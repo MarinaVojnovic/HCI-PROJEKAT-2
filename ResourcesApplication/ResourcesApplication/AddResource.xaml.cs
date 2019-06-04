@@ -15,7 +15,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Xceed.Wpf.Toolkit;
+
 using ResourcesApplication.Beans;
 
 namespace ResourcesApplication
@@ -25,7 +25,6 @@ namespace ResourcesApplication
     /// </summary>
     public partial class AddResource : Window
     {
-        public TempWindow tw { get; set; }
 
         private Resource resource;
         public Resource Resource
@@ -41,8 +40,6 @@ namespace ResourcesApplication
             }
         }
 
-
-        
         private ObservableCollection<ResourceTag> selectedTags;
         public ObservableCollection<ResourceTag> SelectedTags
         {
@@ -56,30 +53,29 @@ namespace ResourcesApplication
                 }
             }
         }
-
+        public List<ResourceTag> ChosenTags { get; set; }
         public bool idError;
         private bool nameError;
         private bool descriptionError;
         private bool publicError;
-        public AddResource(TempWindow t)
+        public AddResource()
         {
-            tw = t;
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
 
             Resource = new Resource();
-           
+
             Resource.X = -1;
             Resource.Y = -1;
 
-           autoCompleteBoxTypes.DataContext = tw.database;
-           autoCompleteBoxTags.DataContext = tw.database;
+            autoCompleteBoxTypes.DataContext = Database.getInstance();
+            // autoCompleteBoxTags.DataContext = Database.getInstance();
 
             DataContext = Resource;
 
             selectedTags = new ObservableCollection<ResourceTag>();
 
-            comboBoxTags.DataContext = this;
+            // comboBoxTags.DataContext = this;
 
             idError = false;
             nameError = false;
@@ -94,11 +90,11 @@ namespace ResourcesApplication
             textBoxId.GetBindingExpression(TextBox.TextProperty).UpdateSource();
             textBoxName.GetBindingExpression(TextBox.TextProperty).UpdateSource();
             textBoxDescription.GetBindingExpression(TextBox.TextProperty).UpdateSource();
-            
+
 
             // Type validation
             if (string.IsNullOrWhiteSpace(autoCompleteBoxTypes.Text)
-                || tw.database.GetType(autoCompleteBoxTypes.Text) == null)
+                || Database.GetType(autoCompleteBoxTypes.Text) == null)
             {
                 textBoxTypeError.Visibility = System.Windows.Visibility.Visible;
                 autoCompleteBoxTypes.Focus();
@@ -110,8 +106,8 @@ namespace ResourcesApplication
                 descriptionError == false &&
                 publicError == false)
             {
-                resource.Type = tw.database.GetType(autoCompleteBoxTypes.Text);
-                
+                resource.Type = Database.GetType(autoCompleteBoxTypes.Text);
+
 
                 // Set the default type icon
                 if (string.IsNullOrEmpty(textBoxIconPath.Text) || string.IsNullOrWhiteSpace(textBoxIconPath.Text))
@@ -120,10 +116,17 @@ namespace ResourcesApplication
                 }
                 Console.WriteLine("duzina liste tagova");
                 Console.WriteLine(SelectedTags.Count());
-                Resource.Tags = new ObservableCollection<ResourceTag>(SelectedTags);
-                tw.database.AddResource(resource);
+
+
+                // Resource.Tags = new ObservableCollection<ResourceTag>(SelectedTags);
+                Database.AddResource(resource);
+                String ids = "";
+                foreach (ResourceTag rt in Resource.Tags)
+                {
+
+                }
+
                 Close();
-                tw.addToResourcesToShow();
             }
 
         }
@@ -144,82 +147,25 @@ namespace ResourcesApplication
 
         private void autoCompleteBoxTag_PreviewKeyDown(object sender, KeyEventArgs e)
         {
+            /*
             if (e.Key == Key.Enter)
             {
-                buttonAddNewTag_Click(null, null);
+                if (Database.GetTag(autoCompleteBoxTags.Text) == null)
+                {
+                    buttonAddNewTag_Click(null, null);
+                }
             }
+            */
         }
 
         private void buttonAddNewTag_Click(object sender, RoutedEventArgs e)
         {
-            // if it hasn't been found in database, open dialog to add it
-            if (tw.database.GetTag(autoCompleteBoxTags.Text) == null)
-            {
-                AddTag dialog;
-                if (string.IsNullOrWhiteSpace(autoCompleteBoxTags.Text))
-                {
-                    dialog = new AddTag(tw);
-                }
-                else
-                {
-                    dialog = new AddTag(autoCompleteBoxTags.Text,tw);
-                }
-                dialog.ShowDialog();
 
-                // If it has successfully added a new tag
-                if (dialog.DialogResult.HasValue && dialog.DialogResult.Value)
-                {
-                    ResourceTag tag = new ResourceTag(tw.database.Tags.Last());
-
-                    // make sure tag is't already added
-                    bool found = false;
-                    foreach (var rt in Resource.Tags)
-                    {
-                        if (rt.Id.Equals(tag.Id))
-                        {
-                            found = true;
-                            SelectedTags.Add(rt);
-                        }
-                    }
-                    if (!found)
-                    {
-                        Resource.Tags.Add(tag);
-                        SelectedTags.Add(tag);
-                    }
-                }
-
-            }
-            // if it has been found in database
-            else
-            {
-                ResourceTag tag = new ResourceTag(tw.database.GetTag(autoCompleteBoxTags.Text));
-
-                // make sure tag is't already added
-                bool found = false;
-                foreach (var manifestationTag in Resource.Tags)
-                {
-                    if (manifestationTag.Id.Equals(tag.Id))
-                    {
-                        found = true;
-                        SelectedTags.Add(manifestationTag);
-                    }
-                }
-                if (!found)
-                {
-                    Resource.Tags.Add(tag);
-                    SelectedTags.Add(tag);
-                }
-
-            }
-
-            // reset field
-            autoCompleteBoxTags.SelectedItem = null;
-            autoCompleteBoxTags.Text = string.Empty;
         }
         private void buttonAddNewType_Click(object sender, RoutedEventArgs e)
         {
 
-            AddType addType = new AddType(autoCompleteBoxTypes.Text,tw);
+            AddType addType = new AddType(autoCompleteBoxTypes.Text);
             addType.ShowDialog();
 
             /*
@@ -240,7 +186,7 @@ namespace ResourcesApplication
         {
             if (e.Key == Key.Enter)
             {
-                if (tw.database.GetType(autoCompleteBoxTypes.Text) == null)
+                if (Database.GetType(autoCompleteBoxTypes.Text) == null)
                 {
                     buttonAddNewType_Click(null, null);
                 }
@@ -250,15 +196,36 @@ namespace ResourcesApplication
         private void autoCompleteBoxTypes_LostFocus(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(autoCompleteBoxTypes.Text)
-                || tw.database.GetType(autoCompleteBoxTypes.Text) == null)
+                || Database.GetType(autoCompleteBoxTypes.Text) == null)
             {
-               // textBoxTypeError.Visibility = System.Windows.Visibility.Visible;
+                // textBoxTypeError.Visibility = System.Windows.Visibility.Visible;
             }
             else
             {
                 //textBoxTypeError.Visibility = System.Windows.Visibility.Hidden;
             }
         }
+
+        private void autoCompleteBoxTags_LostFocus(object sender, RoutedEventArgs e)
+        {
+
+            if (string.IsNullOrWhiteSpace(autoCompleteBoxTypes.Text)
+                || Database.GetType(autoCompleteBoxTypes.Text) == null)
+            {
+                // textBoxTypeError.Visibility = System.Windows.Visibility.Visible;
+            }
+            else
+            {
+                /*
+                //textBoxTypeError.Visibility = System.Windows.Visibility.Hidden;
+                ResourceTag rt = Database.GetTag(autoCompleteBoxTags.Text);
+                MessageBox.Show(rt.Id);
+                Resource.Tags.Add(rt);
+                */
+            }
+
+        }
+
         private void textBoxDescription_Error(object sender, ValidationErrorEventArgs e)
         {
             if (e.Action == ValidationErrorEventAction.Added)
@@ -304,6 +271,30 @@ namespace ResourcesApplication
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(name));
             }
+        }
+
+        private void ButtonTags_Click(object sender, RoutedEventArgs e)
+        {
+            /*
+            SelectTags nt = new SelectTags(ChosenTags);
+            nt.ShowDialog();
+
+            if (nt.DialogResult == DialogResult.OK)
+            {
+                ChosenTags.Clear();
+                List<string> ret = nt.GetSelectedTags();
+                foreach (string s in ret)
+                {
+                    if (MainForm.tags.ContainsKey(s))
+                    {
+                        Tag t = MainForm.tags[s];
+                        tags.Add(s, t);
+                    }
+                }
+                lblTag.Text = tags.Count.ToString() + " etiketa";
+            }
+
+    */
         }
     }
 }

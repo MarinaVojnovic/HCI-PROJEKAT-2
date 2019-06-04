@@ -20,7 +20,6 @@ namespace ResourcesApplication
     /// </summary>
     public partial class AddType : Window
     {
-        public TempWindow tw { get; set; }
 
         private ResourceType type;
         public ResourceType Type
@@ -33,11 +32,10 @@ namespace ResourcesApplication
         private bool nameError;
         private bool iconPathError;
         private bool descriptionError;
-      
 
-        public AddType(TempWindow t)
+
+        public AddType()
         {
-            tw = t;
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
 
@@ -50,9 +48,8 @@ namespace ResourcesApplication
             descriptionError = false;
         }
 
-        public AddType(string id,TempWindow t)
+        public AddType(string id)
         {
-            tw = t;
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
 
@@ -101,22 +98,22 @@ namespace ResourcesApplication
         }
 
 
-     
+
         private void buttonBrowse_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
             dialog.Filter = "Image files (*.png;*.jpg,*.ico)|*.ico;*.png;*.jpg";
             if (dialog.ShowDialog() == true)
             {
-                
+
                 textBoxIconPath.Text = dialog.FileName;
                 Type.IconPath = dialog.FileName;
-                
+
             }
         }
         private void buttonSave_Click(object sender, RoutedEventArgs e)
         {
-            
+
             idError = false; nameError = false; iconPathError = false; descriptionError = false;
             textBoxId.GetBindingExpression(TextBox.TextProperty).UpdateSource();
             textBoxName.GetBindingExpression(TextBox.TextProperty).UpdateSource();
@@ -128,7 +125,7 @@ namespace ResourcesApplication
                 iconPathError == false &&
                 descriptionError == false)
             {
-                tw.database.AddType(type);
+                Database.AddType(type);
                 Close();
             }
         }

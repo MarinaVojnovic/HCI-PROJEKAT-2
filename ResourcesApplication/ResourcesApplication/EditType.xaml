@@ -6,18 +6,23 @@
         xmlns:local="clr-namespace:ResourcesApplication"
         xmlns:validation="clr-namespace:ResourcesApplication.Validation"
         mc:Ignorable="d"
-        Title="EditType" Height="450" Width="800">
-    <Grid>
+        Title="Izmena tipa" Height="450" Width="800">
+    <Grid Background="LightGray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="77*"/>
+            <ColumnDefinition Width="549*"/>
+            <ColumnDefinition Width="166*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid Grid.Column="0" Grid.Row="0">
+        <Grid Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition MaxWidth="50"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition MaxWidth="50"></ColumnDefinition>
-                <ColumnDefinition MaxWidth="150"></ColumnDefinition>
+                <ColumnDefinition MaxWidth="50" Width="55*"></ColumnDefinition>
+                <ColumnDefinition Width="402*"></ColumnDefinition>
+                <ColumnDefinition MaxWidth="50" Width="35*"></ColumnDefinition>
+                <ColumnDefinition MaxWidth="150" Width="0*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="30"></RowDefinition>
@@ -33,7 +38,7 @@
                         <Binding.ValidationRules>
                             <validation:LengthValidation ValidationStep="RawProposedValue" Min="3" Max="50" />
                             <validation:ContentValidation ValidationStep="RawProposedValue" />
-             
+
                         </Binding.ValidationRules>
                     </Binding>
                 </TextBox.Text>
@@ -54,9 +59,9 @@
                     </ControlTemplate>
                 </Validation.ErrorTemplate>
             </TextBox>
-            
+
             <Label Grid.Column="0" Grid.Row="1" Content="Ime:"/>
-            <TextBox Name="textBoxName" MaxLength="55" ToolTip="Unos proizvoljnog imena tipa resursa" Validation.Error="textBoxName_Error"  Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" VerticalContentAlignment="Center" Margin="3">
+            <TextBox Name="textBoxName" MaxLength="55" ToolTip="Unos imena tipa resursa" Validation.Error="textBoxName_Error"  Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" VerticalContentAlignment="Center" Margin="3">
                 <TextBox.Text>
                     <Binding Path="Name" UpdateSourceTrigger="LostFocus" NotifyOnValidationError="True">
                         <Binding.ValidationRules>
@@ -108,16 +113,16 @@
                     </ControlTemplate>
                 </Validation.ErrorTemplate>
             </TextBox>
-            <Button Name="buttonBrowse" Click="buttonBrowse_Click" Grid.Column="1" Grid.Row ="2" ToolTip="Odabir karakteristične ikonice tipa manifestacije sa vašeg racunara" Margin="263,3,3,3" Grid.ColumnSpan="2">
+            <Button Name="buttonBrowse" Click="buttonBrowse_Click" Grid.Column="1" Grid.Row ="2" ToolTip="Odabir ikonice tipa resursa sa vašeg racunara" Margin="263,3,3,3" Grid.ColumnSpan="2">
                 <StackPanel Orientation="Horizontal">
-               
+
                     <TextBlock Text="Pretraži" VerticalAlignment="Center" HorizontalAlignment="Right" Padding="3"/>
                 </StackPanel>
             </Button>
 
 
             <Label Grid.Column="0" Grid.Row="3" Content="Opis:"/>
-            <TextBox Name="textBoxDescription" MaxLength="1100" Validation.Error="textBoxDescription_Error"  TextWrapping="Wrap" AcceptsReturn="True" ToolTip="Unos detaljnog opisa tipa manifestacije" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" VerticalScrollBarVisibility="Auto" Margin="3">
+            <TextBox Name="textBoxDescription" MaxLength="1100" Validation.Error="textBoxDescription_Error"  TextWrapping="Wrap" AcceptsReturn="True" ToolTip="Unos opisa tipa resursa" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" VerticalScrollBarVisibility="Auto" Margin="3">
                 <TextBox.Text>
                     <Binding Path="Description" UpdateSourceTrigger="LostFocus">
                         <Binding.ValidationRules>
@@ -145,10 +150,10 @@
 
 
         </Grid>
-        <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal" Background="LightGray">
-            <Button Name="buttonSave" ToolTip="Čuvanje unetih podataka" Click="buttonSave_Click" Content="Sačuvaj" Margin="330,10,10,10" Padding="20,5"/>
-            <Button Name="buttonCancel" ToolTip="Odustajanje od unosa podataka" Click="buttonCancel_Click" Content="Odustani" Margin="10,10,10,10" Padding="20,5"/>
-        </StackPanel>
+
+        <Button Background="LightGreen" x:Name="buttonSave" ToolTip="Čuvanje izmene" Click="buttonSave_Click" Content="Sačuvaj" Margin="277,350,79,28" Padding="20,5" Grid.Column="1" RenderTransformOrigin="0.615,0.391"/>
+        <Button Background="LightCoral" x:Name="buttonCancel" ToolTip="Odustajanje od izmene" Click="buttonCancel_Click" Content="Odustani" Margin="511,350,50,28" Padding="20,5" Grid.Column="1" Grid.ColumnSpan="2"/>
+
 
 
 

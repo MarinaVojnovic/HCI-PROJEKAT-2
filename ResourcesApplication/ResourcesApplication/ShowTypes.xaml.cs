@@ -21,7 +21,6 @@ namespace ResourcesApplication
     /// </summary>
     public partial class ShowTypes : Window
     {
-        public TempWindow tw { get; set; }
         public ResourceType SelectedType { get; set; }
         private ObservableCollection<ResourceType> types;
         public ObservableCollection<ResourceType> Types
@@ -36,21 +35,20 @@ namespace ResourcesApplication
                 }
             }
         }
-        public ShowTypes(TempWindow t)
+        public ShowTypes()
         {
-            tw = t;
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             SelectedType = null;
             DataContext = this;
-            tw.database.loadData();
-            Types = tw.database.Types;
+            Database.loadData();
+            Types = Database.getInstance().Types;
         }
 
 
         private void typesGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            buttonEdit_Click(null, null);
+            //buttonEdit_Click(null, null);
         }
 
         private void buttonDelete_Click(object sender, RoutedEventArgs e)
@@ -87,24 +85,12 @@ namespace ResourcesApplication
             */
         }
 
-        private void buttonEdit_Click(object sender, RoutedEventArgs e)
-        {
-            if (SelectedType != null)
-            {
-                EditType editType = new EditType(SelectedType.Id);
-                editType.Show();
-            }
-            else
-            {
-                MessageBox.Show("Molimo, odaberite tip manifestacije za ažuriranje", "Ažuriranje tipa manifestacije");
-            }
-        }
+
         private void typesGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (SelectedType != null)
             {
-                buttonEdit.IsEnabled = true;
-                buttonDelete.IsEnabled = true;
+
             }
         }
 

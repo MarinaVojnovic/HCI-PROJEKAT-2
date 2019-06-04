@@ -66,7 +66,64 @@ namespace ResourcesApplication.Commands
                 new KeyGesture(Key.T, ModifierKeys.Alt)
                   }
                   );
+        public static readonly RoutedUICommand EditResources = new RoutedUICommand(
+              "Edit Resources",
+              "EditResources",
+              typeof(RoutedCommand),
+              new InputGestureCollection()
+              {
+                new KeyGesture(Key.T, ModifierKeys.Alt)
+              }
+              );
 
+        public static readonly RoutedUICommand DeleteResources = new RoutedUICommand(
+                 "Delete Resources",
+                 "DeleteResources",
+                 typeof(RoutedCommand),
+                 new InputGestureCollection()
+                 {
+                new KeyGesture(Key.T, ModifierKeys.Alt)
+                 }
+                 );
+
+        public static readonly RoutedUICommand EditTypes = new RoutedUICommand(
+               "Edit Types",
+               "EditTypes",
+               typeof(RoutedCommand),
+               new InputGestureCollection()
+               {
+                new KeyGesture(Key.T, ModifierKeys.Alt)
+               }
+               );
+
+        public static readonly RoutedUICommand DeleteTypes = new RoutedUICommand(
+               "Delete Types",
+               "DeleteTypes",
+               typeof(RoutedCommand),
+               new InputGestureCollection()
+               {
+                new KeyGesture(Key.T, ModifierKeys.Alt)
+               }
+               );
+
+        public static readonly RoutedUICommand EditTags = new RoutedUICommand(
+              "Edit Tags",
+              "EditTags",
+              typeof(RoutedCommand),
+              new InputGestureCollection()
+              {
+                new KeyGesture(Key.T, ModifierKeys.Alt)
+              }
+              );
+        public static readonly RoutedUICommand DeleteTags = new RoutedUICommand(
+              "Delete Tags",
+              "DeleteTags",
+              typeof(RoutedCommand),
+              new InputGestureCollection()
+              {
+                new KeyGesture(Key.T, ModifierKeys.Alt)
+              }
+              );
 
 
 

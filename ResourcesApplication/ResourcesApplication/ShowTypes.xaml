@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ResourcesApplication"
         mc:Ignorable="d"
-        Title="ShowTypes" Height="450" Width="800">
+        Title="Prikaz tipova resursa" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30" />
@@ -22,7 +22,7 @@
             <ColumnDefinition Width="100" />
         </Grid.ColumnDefinitions>
 
-        <DataGrid Name="typesGrid" MouseDoubleClick="typesGrid_MouseDoubleClick" AutoGenerateColumns="False" SelectedItem="{Binding Path=SelectedType, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Path=Types}" Margin="5" IsReadOnly="True" Grid.Column="0" Grid.Row="1" Grid.RowSpan="7" SelectionChanged="typesGrid_SelectionChanged">
+        <DataGrid Name="typesGrid" MouseDoubleClick="typesGrid_MouseDoubleClick" AutoGenerateColumns="False" SelectedItem="{Binding Path=SelectedType, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Path=Types}" Margin="5,10,0,0" IsReadOnly="True" Grid.Column="0" Grid.RowSpan="7" SelectionChanged="typesGrid_SelectionChanged" HorizontalAlignment="Left" Width="777" Grid.ColumnSpan="2">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Oznaka tipa" MinWidth="100" Width="*" Binding="{Binding Id}"/>
                 <DataGridTextColumn Header="Ime tipa"  MinWidth="100" Width="*" Binding="{Binding Name}"/>
@@ -30,15 +30,6 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <Button Name="buttonEdit" ToolTip="Uredi odabran tip resursa" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Margin="0,10,5,10" IsEnabled="False" Click="buttonEdit_Click" Height="30">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Uredi" VerticalAlignment="Center" HorizontalAlignment="Right" Padding="3"/>
-            </StackPanel>
-        </Button>
-        <Button Name="buttonDelete" ToolTip="Ukloni odabrani tip resursa" Grid.Row="3" VerticalAlignment="Center" Margin="0,10" IsEnabled="False" Click="buttonDelete_Click" Height="30" Grid.Column="1" HorizontalAlignment="Left" Width="95">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Ukloni" VerticalAlignment="Center" HorizontalAlignment="Right" Padding="3"/>
-            </StackPanel>
-        </Button>
+
     </Grid>
 </Window>
