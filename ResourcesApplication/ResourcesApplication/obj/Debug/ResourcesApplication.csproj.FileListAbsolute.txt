@@ -135,7 +135,6 @@ C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplicat
 C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\ShowResources.baml
 C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\Demo\Demo.g.cs
 C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\Demo\Demo.baml
-C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\Demo\DemoTest.mp4
 C:\Users\Korisnik\Desktop\hcimapa\gitovani\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\ResourcesApplication.exe.config
 C:\Users\Korisnik\Desktop\hcimapa\gitovani\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\ResourcesApplication.exe
 C:\Users\Korisnik\Desktop\hcimapa\gitovani\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\ResourcesApplication.pdb
@@ -579,3 +578,16 @@ C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplicat
 C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\Html\ResourceTag.html
 C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\Html\ResourceType.html
 C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\Html\PocetniProzorAplikacije.jpg
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\Html\BrisanjeEtikete.jpg
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\Html\DodavanjeEtikete.jpg
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\Html\IzmenaEtikete.jpg
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\Html\PrikazEtikete.jpg
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\Html\BrisanjeTipa.jpg
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\Html\DodavanjeTipa.jpg
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\Html\IzmenaTipa.jpg
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\Html\PrikazTipa.jpg
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\Html\GlavniProzorAplikacije.jpg
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\Html\BrisanjeResursa.jpg
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\Html\IzmenaResursa.jpg
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\Html\PrikazResursa.jpg
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\bin\Debug\Demo\DemoTest.mp4

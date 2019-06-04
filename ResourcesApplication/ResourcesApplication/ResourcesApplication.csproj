@@ -307,15 +307,51 @@
     <Content Include="Demo\DemoTest.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Html\BrisanjeEtikete.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Html\BrisanjeResursa.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Html\BrisanjeTipa.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Html\DodavanjeEtikete.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Html\DodavanjeTipa.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Html\error.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Resource Include="Icons\fancy.PNG" />
-    <Resource Include="Html\GlavniProzorAplikacije.jpg" />
+    <Content Include="Html\GlavniProzorAplikacije.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Html\IzmenaEtikete.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Html\IzmenaResursa.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Html\IzmenaTipa.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Html\MainWindow.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Html\PocetniProzorAplikacije.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Html\PrikazEtikete.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Html\PrikazResursa.PNG" />
+    <Content Include="Html\PrikazResursa.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Html\PrikazTipa.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Html\Resource.html">
@@ -327,9 +363,6 @@
     <Content Include="Html\ResourceType.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Html\ViewResources.html" />
-    <Content Include="Html\ViewTags.html" />
-    <Content Include="Html\ViewTypes.html" />
     <Resource Include="Maps\background.jpg" />
     <Resource Include="Icons\AddIcon.png" />
     <Resource Include="Icons\AppIcon.png" />

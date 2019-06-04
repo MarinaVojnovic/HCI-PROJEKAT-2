@@ -9,14 +9,23 @@
 //------------------------------------------------------------------------------
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("demo/demotest.mp4")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("html/brisanjeetikete.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("html/brisanjeresursa.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("html/brisanjetipa.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("html/dodavanjeetikete.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("html/dodavanjetipa.jpg")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("html/error.html")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("html/glavniprozoraplikacije.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("html/izmenaetikete.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("html/izmenaresursa.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("html/izmenatipa.jpg")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("html/mainwindow.html")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("html/pocetniprozoraplikacije.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("html/prikazetikete.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("html/prikazresursa.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("html/prikaztipa.jpg")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("html/resource.html")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("html/resourcetag.html")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("html/resourcetype.html")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("html/viewresources.html")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("html/viewtags.html")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("html/viewtypes.html")]
 
 
