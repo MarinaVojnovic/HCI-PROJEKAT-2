@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Leona\Desktop\SONJA HCI\HCI-PROJEKAT-2\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\obj\Debug\
 ResourcesApplication
 none
 false
 DEBUG;TRACE
-C:\Users\Leona\Desktop\SONJA HCI\HCI-PROJEKAT-2\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\App.xaml
-241384392515
-11989577262
-44-2020045606
-22-555889368
-AddResource.xaml;AddTag.xaml;AddType.xaml;DeleteResources.xaml;DeleteTags.xaml;DeleteTypes.xaml;Demo\Demo.xaml;Demo\DemoHelp.xaml;EditResource.xaml;EditResources.xaml;EditTag.xaml;EditTags.xaml;EditType.xaml;EditTypes.xaml;IdSearch.xaml;MainWindow.xaml;MapSearch.xaml;NameSearch.xaml;ShowResources.xaml;ShowTags.xaml;ShowTypes.xaml;TagSearch.xaml;TempWindow.xaml;TypeSearch.xaml;
+C:\Users\Dule\Desktop\INTERAKCIJA COVEK RACUNAR\HCI-PROJEKAT-2\ResourcesApplication\ResourcesApplication\App.xaml
+25-928010133
+101842558826
+46-1485499005
+222084236462
+AddResource.xaml;AddTag.xaml;AddType.xaml;DeleteResources.xaml;DeleteTags.xaml;DeleteTypes.xaml;Demo\Demo.xaml;Demo\DemoHelp.xaml;EditResource.xaml;EditResources.xaml;EditTag.xaml;EditTags.xaml;EditType.xaml;EditTypes.xaml;Html\HtmlHelp.xaml;IdSearch.xaml;MainWindow.xaml;MapSearch.xaml;NameSearch.xaml;ShowResources.xaml;ShowTags.xaml;ShowTypes.xaml;TagSearch.xaml;TempWindow.xaml;TypeSearch.xaml;
 
-True
+False
 

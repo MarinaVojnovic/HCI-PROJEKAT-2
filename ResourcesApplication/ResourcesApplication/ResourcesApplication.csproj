@@ -125,6 +125,10 @@
     <Compile Include="EditTypes.xaml.cs">
       <DependentUpon>EditTypes.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Html\HelpProvider.cs" />
+    <Compile Include="Html\HtmlHelp.xaml.cs">
+      <DependentUpon>HtmlHelp.xaml</DependentUpon>
+    </Compile>
     <Compile Include="IdSearch.xaml.cs">
       <DependentUpon>IdSearch.xaml</DependentUpon>
     </Compile>
@@ -213,6 +217,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Html\HtmlHelp.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="IdSearch.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -299,6 +307,29 @@
     <Content Include="Demo\DemoTest.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Html\error.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Icons\fancy.PNG" />
+    <Resource Include="Html\GlavniProzorAplikacije.jpg" />
+    <Content Include="Html\MainWindow.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Html\PocetniProzorAplikacije.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Html\Resource.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Html\ResourceTag.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Html\ResourceType.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Html\ViewResources.html" />
+    <Content Include="Html\ViewTags.html" />
+    <Content Include="Html\ViewTypes.html" />
     <Resource Include="Maps\background.jpg" />
     <Resource Include="Icons\AddIcon.png" />
     <Resource Include="Icons\AppIcon.png" />
@@ -326,9 +357,7 @@
     <Resource Include="Maps\NoviSadMap2.png" />
     <Resource Include="Maps\NoviSadMap3.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="HelpData\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

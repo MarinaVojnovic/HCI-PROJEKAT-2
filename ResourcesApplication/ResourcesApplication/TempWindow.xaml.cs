@@ -17,6 +17,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using ResourcesApplication.Beans;
+using ResourcesApplication.Html;
+using ResourcesApplication.Demo;
 
 namespace ResourcesApplication
 {
@@ -699,6 +701,33 @@ namespace ResourcesApplication
         private void ShowAll_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             ResourcePins_Draw();
+        }
+
+
+        private void Help_Click(object sender, RoutedEventArgs e)
+        {
+            HtmlHelp help = new HtmlHelp("MainWindow", this);
+            help.Show();
+        }
+
+        private void Demo_Click(object sender, RoutedEventArgs e)
+        {
+            DemoHelp tutorial = new DemoHelp();
+            tutorial.Show();
+        }
+
+        private void Help_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            IInputElement focusedControl = FocusManager.GetFocusedElement(this);
+            if (focusedControl is DependencyObject)
+            {
+                string str = HelpProvider.GetHelpKey((DependencyObject)focusedControl);
+                HelpProvider.ShowHelp(str, this);
+            }
+            else
+            {
+                HelpProvider.ShowHelp(GetType().Name, this);
+            }
         }
     }
 }

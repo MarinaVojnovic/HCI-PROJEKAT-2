@@ -9,5 +9,14 @@
 //------------------------------------------------------------------------------
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("demo/demotest.mp4")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("html/error.html")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("html/mainwindow.html")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("html/pocetniprozoraplikacije.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("html/resource.html")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("html/resourcetag.html")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("html/resourcetype.html")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("html/viewresources.html")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("html/viewtags.html")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("html/viewtypes.html")]
 
 
