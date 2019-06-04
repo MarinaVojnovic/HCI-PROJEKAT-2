@@ -22,6 +22,12 @@
         <CommandBinding Command="cmd:RoutedCommands.DeleteTypes" Executed="DeleteTypes_Executed"/>
         <CommandBinding Command="cmd:RoutedCommands.EditTags" Executed="EditTags_Executed"/>
         <CommandBinding Command="cmd:RoutedCommands.DeleteTags" Executed="DeleteTags_Executed"/>
+        <CommandBinding Command="cmd:RoutedCommands.SearchID" Executed="SearchID_Executed"/>
+        <CommandBinding Command="cmd:RoutedCommands.SearchName" Executed="SearchName_Executed"/>
+        <CommandBinding Command="cmd:RoutedCommands.SearchType" Executed="SearchType_Executed"/>
+        <CommandBinding Command="cmd:RoutedCommands.SearchTag" Executed="SearchTag_Executed"/>
+        <CommandBinding Command="cmd:RoutedCommands.Filter" Executed="Filter_Executed"/>
+        <CommandBinding Command="cmd:RoutedCommands.ShowAll" Executed="ShowAll_Executed"/>
     </Window.CommandBindings>
     <DockPanel>
         <Menu DockPanel.Dock ="Top" Height="25">
@@ -104,6 +110,39 @@
                 <MenuItem Header="Obrisi" ToolTip="Brisanje etiketa" Command="cmd:RoutedCommands.DeleteTags" InputGestureText="Alt+E">
                     <MenuItem.Icon>
                         <Image Source="Icons\DeleteIcon.png" Width="12" Height="12"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator></Separator>
+            </MenuItem>
+            <MenuItem Header=" Pretraga mape" ToolTip="Odabir opcija za pretragu resursa">
+                <MenuItem Header=" Pretraga resursa po ID-u" ToolTip="Pretraga resursa na mapi po ID-u resursa" Command="cmd:RoutedCommands.SearchID" InputGestureText="Ctrl+I">
+                    <MenuItem.Icon>
+                        <Image Source="Icons\SearchIcon.png" Width="12" Height="12"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header=" Pretraga resursa po nazivu" ToolTip="Pretraga resursa na mapi po nazivu resursa" Command="cmd:RoutedCommands.SearchName" InputGestureText="Ctrl+N">
+                    <MenuItem.Icon>
+                        <Image Source="Icons\SearchIcon.png" Width="12" Height="12"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header=" Pretraga resursa po etiketi" ToolTip="Pretraga resursa na mapi po etiketi resursa" Command="cmd:RoutedCommands.SearchTag" InputGestureText="Ctrl+O">
+                    <MenuItem.Icon>
+                        <Image Source="Icons\SearchIcon.png" Width="12" Height="12"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header=" Pretraga resursa po tipu" ToolTip="Pretraga resursa na mapi po tipu resursa" Command="cmd:RoutedCommands.SearchType" InputGestureText="Ctrl+U">
+                    <MenuItem.Icon>
+                        <Image Source="Icons\SearchIcon.png" Width="12" Height="12"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header=" Filtriranje" ToolTip="Odabir kriterijuma koje će prikazani resursi ispunjavati" Command="cmd:RoutedCommands.Filter" InputGestureText="Ctrl+F">
+                    <MenuItem.Icon>
+                        <Image Source="Icons\SearchIcon.png" Width="12" Height="12"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header=" Prikaz svih resursa mape" ToolTip="Prikaz svih resursa koji su dodati na mapu" Command="cmd:RoutedCommands.ShowAll" InputGestureText="Ctrl+A">
+                    <MenuItem.Icon>
+                        <Image Source="Icons\SearchIcon.png" Width="12" Height="12"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator></Separator>

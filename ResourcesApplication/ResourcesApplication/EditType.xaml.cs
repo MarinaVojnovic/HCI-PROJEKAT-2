@@ -34,13 +34,14 @@ namespace ResourcesApplication
         private bool nameError;
         private bool iconPathError;
         private bool descriptionError;
-        public EditType(string typeId)
+        public EditType(string typeId, TempWindow t)
         {
+            tp = t;
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
 
             oldId = typeId;
-            type = new ResourceType(tp.database.GetType(typeId));
+            type = tp.database.GetType(oldId);
             DataContext = type;
 
             idError = false;

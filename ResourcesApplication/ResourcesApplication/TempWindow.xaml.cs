@@ -374,10 +374,62 @@ namespace ResourcesApplication
 
         }
 
-        private void ResourcePins_Draw()
+        public void ResourcePins_Draw()
         {
             Map.Children.Clear();
             foreach (Resource resource in Resources)
+            {
+                if (resource.X != -1 && resource.Y != -1)
+                {
+                    Console.WriteLine("OD PRONADJENOG X i Y su " + resource.X + " " + resource.Y);
+                    Console.WriteLine("OD PRONADJ " + resource.Id);
+                    Image ResourceIcon = new Image();
+                    ResourceIcon.Width = 30;
+                    ResourceIcon.Height = 30;
+                    ResourceIcon.ToolTip = "Id resursa: " + resource.Id + "\nZa vise informacija pritisnite desni klik misa ";
+
+                    if (File.Exists(resource.IconPath))
+                    {
+                        ResourceIcon.Source = new BitmapImage(new Uri(resource.IconPath, UriKind.Absolute));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Došlo je do greške pri učitavanju ikonice resursa, molimo dodajte novu ikonicu!", "Došlo je do greške!");
+                        //EditManifestation edit = new EditManifestation(resource.Id);
+                        //edit.ShowDialog();
+                        break;
+                    }
+
+                    Map.Children.Add(ResourceIcon);
+                    ContextMenu cm = new ContextMenu();
+                    MenuItem m1 = new MenuItem();
+                    MenuItem m3 = new MenuItem();
+                    m3.Header = "Vrati resurs u listu (resurs nece biti prikazan na mapi)";
+                    m3.Click += new RoutedEventHandler(return_to_list);
+                    MenuItem m4 = new MenuItem();
+                    m4.Header = "Kopiraj resurs na drugu mapu";
+                    m4.Click += new RoutedEventHandler(copy_Click);
+                    cm.Items.Add(m3);
+                    cm.Items.Add(m4);
+                    ResourceIcon.ContextMenu = cm;
+
+                    Canvas.SetLeft(ResourceIcon, resource.X);
+                    Canvas.SetTop(ResourceIcon, resource.Y);
+
+                }
+            }
+
+            // To scroll down in list, for easier drag and dropping recent item
+            if (listView != null && listView.Items.Count != 0)
+            {
+                listView.ScrollIntoView(listView.Items.GetItemAt(listView.Items.Count - 1));
+            }
+        }
+
+        public void ResourcePins_Draw2(List<Resource> res)
+        {
+            Map.Children.Clear();
+            foreach (Resource resource in res)
             {
                 if (resource.X != -1 && resource.Y != -1)
                 {
@@ -403,12 +455,19 @@ namespace ResourcesApplication
                     Map.Children.Add(ResourceIcon);
                     ContextMenu cm = new ContextMenu();
                     MenuItem m1 = new MenuItem();
+                    m1.Header = "Obrisi resurs";
+                    m1.Click += new RoutedEventHandler(delete_Click);
+                    MenuItem m2 = new MenuItem();
+                    m2.Header = "Izmeni resurs";
+                    m2.Click += new RoutedEventHandler(edit_Click);
                     MenuItem m3 = new MenuItem();
                     m3.Header = "Vrati resurs u listu (resurs nece biti prikazan na mapi)";
                     m3.Click += new RoutedEventHandler(return_to_list);
                     MenuItem m4 = new MenuItem();
                     m4.Header = "Kopiraj resurs na drugu mapu";
                     m4.Click += new RoutedEventHandler(copy_Click);
+                    cm.Items.Add(m1);
+                    cm.Items.Add(m2);
                     cm.Items.Add(m3);
                     cm.Items.Add(m4);
                     ResourceIcon.ContextMenu = cm;
@@ -540,13 +599,28 @@ namespace ResourcesApplication
                 }
 
                 Console.WriteLine("Na kraju petog resourcePinX" + resourcePin.X + " resourcePin.Y " + resourcePin.Y);
-                if (!(Resources.Contains(resourcePin)))
+                bool postoji = false;
+                foreach (Resource r in Resources)
+                {
+                    if (String.Equals(r.Id, resourcePin.Id))
+                    {
+                        postoji = true;
+                        break;
+                    }
+
+                }
+                if (postoji == false)
                 {
                     database.AddResource(resourcePin);
                 }
 
-                database.UpdateResource(resourcePin.Id, resourcePin);
+                else
+                {
 
+                    database.UpdateResource(resourcePin.Id, resourcePin);
+                }
+
+                addToResourcesToShow();
 
                 ResourcePins_Draw();
 
@@ -589,6 +663,41 @@ namespace ResourcesApplication
                 ResourcesToShow.Add(r);
             }
 
+            ResourcePins_Draw();
+        }
+
+        private void SearchID_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            IdSearch searh = new IdSearch(this);
+            searh.Show();
+        }
+
+        private void SearchName_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            NameSearch searh = new NameSearch(this);
+            searh.Show();
+        }
+
+        private void SearchTag_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            TagSearch searh = new TagSearch(this);
+            searh.Show();
+        }
+
+        private void SearchType_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            TypeSearch searh = new TypeSearch(this);
+            searh.Show();
+        }
+
+        private void Filter_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+           // Filter searh = new Filter(this);
+           // searh.Show();
+        }
+
+        private void ShowAll_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
             ResourcePins_Draw();
         }
     }

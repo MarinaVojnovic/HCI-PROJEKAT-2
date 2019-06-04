@@ -125,8 +125,14 @@
     <Compile Include="EditTypes.xaml.cs">
       <DependentUpon>EditTypes.xaml</DependentUpon>
     </Compile>
+    <Compile Include="IdSearch.xaml.cs">
+      <DependentUpon>IdSearch.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MapSearch.xaml.cs">
       <DependentUpon>MapSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NameSearch.xaml.cs">
+      <DependentUpon>NameSearch.xaml</DependentUpon>
     </Compile>
     <Compile Include="ShowResources.xaml.cs">
       <DependentUpon>ShowResources.xaml</DependentUpon>
@@ -137,8 +143,14 @@
     <Compile Include="ShowTypes.xaml.cs">
       <DependentUpon>ShowTypes.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TagSearch.xaml.cs">
+      <DependentUpon>TagSearch.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TempWindow.xaml.cs">
       <DependentUpon>TempWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TypeSearch.xaml.cs">
+      <DependentUpon>TypeSearch.xaml</DependentUpon>
     </Compile>
     <Compile Include="Validation\ContentValidation.cs" />
     <Compile Include="Validation\LengthValidation.cs" />
@@ -201,6 +213,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="IdSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -223,6 +239,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="NameSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ShowResources.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -235,7 +255,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="TagSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="TempWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TypeSearch.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

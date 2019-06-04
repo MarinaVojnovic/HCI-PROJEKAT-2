@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:ResourcesApplication"
         mc:Ignorable="d"
         Title="Prikaz resursa" Height="600" Width="1300">
+
     <Grid Background="LightGray">
         <Grid.RowDefinitions>
             <RowDefinition Height="30" />

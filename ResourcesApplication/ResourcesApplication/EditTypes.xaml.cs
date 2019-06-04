@@ -79,7 +79,7 @@ namespace ResourcesApplication
                 }
                 IndexesForUndo.Add(index);
 
-                EditType editType = new EditType(SelectedType.Id);
+                EditType editType = new EditType(SelectedType.Id, tw);
                 editType.Show();
             }
             else

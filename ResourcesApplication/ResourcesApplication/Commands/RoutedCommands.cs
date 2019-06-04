@@ -125,7 +125,61 @@ namespace ResourcesApplication.Commands
               }
               );
 
+        public static readonly RoutedUICommand SearchID = new RoutedUICommand(
+                  "Search Resources by ID on Map",
+                  "SearchID",
+                  typeof(RoutedCommand),
+                  new InputGestureCollection()
+                  {
+                new KeyGesture(Key.I, ModifierKeys.Control)
+                  }
+                  );
 
+        public static readonly RoutedUICommand SearchName = new RoutedUICommand(
+                 "Search Resources by Name on Map",
+                 "SearchName",
+                 typeof(RoutedCommand),
+                 new InputGestureCollection()
+                 {
+                new KeyGesture(Key.N, ModifierKeys.Control)
+                 }
+                 );
+        public static readonly RoutedUICommand SearchTag = new RoutedUICommand(
+                 "Search Resources by Tag on Map",
+                 "SearchTag",
+                 typeof(RoutedCommand),
+                 new InputGestureCollection()
+                 {
+                new KeyGesture(Key.O, ModifierKeys.Control)
+                 }
+                 );
+        public static readonly RoutedUICommand SearchType = new RoutedUICommand(
+                 "Search Resources by Type on Map",
+                 "SearchType",
+                 typeof(RoutedCommand),
+                 new InputGestureCollection()
+                 {
+                new KeyGesture(Key.U, ModifierKeys.Control)
+                 }
+                 );
+        public static readonly RoutedUICommand Filter = new RoutedUICommand(
+                 "Filter Resources by on Map",
+                 "Filter",
+                 typeof(RoutedCommand),
+                 new InputGestureCollection()
+                 {
+                new KeyGesture(Key.F, ModifierKeys.Control)
+                 }
+                 );
+        public static readonly RoutedUICommand ShowAll = new RoutedUICommand(
+                "Show All resources on map",
+                "ShowAll",
+                typeof(RoutedCommand),
+                new InputGestureCollection()
+                {
+                new KeyGesture(Key.A, ModifierKeys.Control)
+                }
+                );
 
     }
 

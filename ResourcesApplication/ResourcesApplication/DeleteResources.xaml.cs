@@ -92,6 +92,7 @@ namespace ResourcesApplication
                 ResourcesForUndo.Add(forDelete);
                 tw.database.DeleteResource(forDelete);
                 tw.addToResourcesToShow();
+                tw.ResourcePins_Draw();
 
             }
 

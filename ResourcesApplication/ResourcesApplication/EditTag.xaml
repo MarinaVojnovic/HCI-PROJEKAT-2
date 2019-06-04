@@ -92,5 +92,4 @@
             <Button x:Name="buttonCancel" Click="buttonCancel_Click" ToolTip="Odustajanje od izmene taga" Content="Cancel" Background="LightCoral" Margin="10,0,0,0" Padding="5,5" RenderTransformOrigin="0.694,2.072" />
         </StackPanel>
     </Grid>
-
 </Window>

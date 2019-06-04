@@ -256,5 +256,72 @@ namespace ResourcesApplication.Beans
             }
         }
 
+        public List<Resource> searchName(string name)
+        {
+            List<Resource> send = new List<Resource>();
+            for (int i = 0; i < Resources.Count; i++)
+            {
+                if (name != null)
+                {
+                    if (name.Equals(Resources[i].Name))
+                    {
+                        send.Add(Resources[i]);
+                    }
+                }
+            }
+
+            return send;
+        }
+
+        public List<Resource> searchType(string type)
+        {
+            List<Resource> send = new List<Resource>();
+            for (int i = 0; i < Resources.Count; i++)
+            {
+                if (type != null)
+                {
+                    if (type.Equals(Resources[i].Type.Id))
+                    {
+                        send.Add(Resources[i]);
+                    }
+                }
+            }
+
+            return send;
+        }
+
+        public List<Resource> searchTag(string tag)
+        {
+            List<Resource> send = new List<Resource>();
+            for (int i = 0; i < Resources.Count; i++)
+            {
+                foreach (ResourceTag rt in Resources[i].Tags)
+                {
+                    if (rt.Id.Equals(tag))
+                    {
+                        send.Add(Resources[i]);
+                    }
+                }
+            }
+
+            return send;
+        }
+
+        public List<Resource> filter(string tag)
+        {
+            List<Resource> send = new List<Resource>();
+            for (int i = 0; i < Resources.Count; i++)
+            {
+                foreach (ResourceTag rt in Resources[i].Tags)
+                {
+                    if (rt.Id.Equals(tag))
+                    {
+                        send.Add(Resources[i]);
+                    }
+                }
+            }
+
+            return send;
+        }
     }
 }
