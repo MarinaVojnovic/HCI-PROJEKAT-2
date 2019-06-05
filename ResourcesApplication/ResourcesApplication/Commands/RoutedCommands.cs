@@ -15,7 +15,7 @@ namespace ResourcesApplication.Commands
             typeof(RoutedCommand),
             new InputGestureCollection()
             {
-            new KeyGesture(Key.M, ModifierKeys.Control)
+            new KeyGesture(Key.E, ModifierKeys.Control)
             }
             );
         public static readonly RoutedUICommand ShowTags = new RoutedUICommand(
@@ -24,7 +24,7 @@ namespace ResourcesApplication.Commands
            typeof(RoutedCommand),
            new InputGestureCollection()
            {
-            new KeyGesture(Key.M, ModifierKeys.Control)
+            new KeyGesture(Key.F, ModifierKeys.Control)
            }
            );
 
@@ -34,7 +34,7 @@ namespace ResourcesApplication.Commands
            typeof(RoutedCommand),
            new InputGestureCollection()
            {
-            new KeyGesture(Key.M, ModifierKeys.Control)
+            new KeyGesture(Key.A, ModifierKeys.Alt)
            }
            );
         public static readonly RoutedUICommand ShowTypes = new RoutedUICommand(
@@ -43,7 +43,7 @@ namespace ResourcesApplication.Commands
                    typeof(RoutedCommand),
                    new InputGestureCollection()
                    {
-                new KeyGesture(Key.T, ModifierKeys.Alt)
+                new KeyGesture(Key.B, ModifierKeys.Alt)
                    }
                    );
 
@@ -53,7 +53,7 @@ namespace ResourcesApplication.Commands
                   typeof(RoutedCommand),
                   new InputGestureCollection()
                   {
-                new KeyGesture(Key.T, ModifierKeys.Alt)
+                new KeyGesture(Key.A, ModifierKeys.Control)
                   }
                   );
 
@@ -63,7 +63,7 @@ namespace ResourcesApplication.Commands
                   typeof(RoutedCommand),
                   new InputGestureCollection()
                   {
-                new KeyGesture(Key.T, ModifierKeys.Alt)
+                new KeyGesture(Key.B, ModifierKeys.Control)
                   }
                   );
         public static readonly RoutedUICommand EditResources = new RoutedUICommand(
@@ -72,7 +72,7 @@ namespace ResourcesApplication.Commands
               typeof(RoutedCommand),
               new InputGestureCollection()
               {
-                new KeyGesture(Key.T, ModifierKeys.Alt)
+                new KeyGesture(Key.C, ModifierKeys.Control)
               }
               );
 
@@ -82,7 +82,7 @@ namespace ResourcesApplication.Commands
                  typeof(RoutedCommand),
                  new InputGestureCollection()
                  {
-                new KeyGesture(Key.T, ModifierKeys.Alt)
+                new KeyGesture(Key.D, ModifierKeys.Control)
                  }
                  );
 
@@ -92,7 +92,7 @@ namespace ResourcesApplication.Commands
                typeof(RoutedCommand),
                new InputGestureCollection()
                {
-                new KeyGesture(Key.T, ModifierKeys.Alt)
+                new KeyGesture(Key.C, ModifierKeys.Alt)
                }
                );
 
@@ -102,7 +102,7 @@ namespace ResourcesApplication.Commands
                typeof(RoutedCommand),
                new InputGestureCollection()
                {
-                new KeyGesture(Key.T, ModifierKeys.Alt)
+                new KeyGesture(Key.D, ModifierKeys.Alt)
                }
                );
 
@@ -112,7 +112,7 @@ namespace ResourcesApplication.Commands
               typeof(RoutedCommand),
               new InputGestureCollection()
               {
-                new KeyGesture(Key.T, ModifierKeys.Alt)
+                new KeyGesture(Key.G, ModifierKeys.Control)
               }
               );
         public static readonly RoutedUICommand DeleteTags = new RoutedUICommand(
@@ -121,7 +121,7 @@ namespace ResourcesApplication.Commands
               typeof(RoutedCommand),
               new InputGestureCollection()
               {
-                new KeyGesture(Key.T, ModifierKeys.Alt)
+                new KeyGesture(Key.H, ModifierKeys.Control)
               }
               );
 
@@ -159,7 +159,7 @@ namespace ResourcesApplication.Commands
                  typeof(RoutedCommand),
                  new InputGestureCollection()
                  {
-                new KeyGesture(Key.U, ModifierKeys.Control)
+                new KeyGesture(Key.U, ModifierKeys.Alt)
                  }
                  );
         public static readonly RoutedUICommand Filter = new RoutedUICommand(

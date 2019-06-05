@@ -125,6 +125,9 @@
     <Compile Include="EditTypes.xaml.cs">
       <DependentUpon>EditTypes.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Filter.xaml.cs">
+      <DependentUpon>Filter.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Html\HelpProvider.cs" />
     <Compile Include="Html\HtmlHelp.xaml.cs">
       <DependentUpon>HtmlHelp.xaml</DependentUpon>
@@ -158,6 +161,7 @@
     </Compile>
     <Compile Include="Validation\ContentValidation.cs" />
     <Compile Include="Validation\LengthValidation.cs" />
+    <Compile Include="Validation\NumberValidation.cs" />
     <Compile Include="Validation\ResourceIdValidation.cs" />
     <Compile Include="Validation\TagIdValidation.cs" />
     <Compile Include="Validation\TypeIdValidation.cs" />
@@ -214,6 +218,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="EditTypes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Filter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

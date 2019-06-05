@@ -29,7 +29,6 @@
         <CommandBinding Command="cmd:RoutedCommands.Filter" Executed="Filter_Executed"/>
         <CommandBinding Command="cmd:RoutedCommands.ShowAll" Executed="ShowAll_Executed"/>
     </Window.CommandBindings>
-    <ScrollViewer  VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
     <DockPanel>
         <Menu DockPanel.Dock ="Top" Height="25">
             <Menu.ItemsPanel>
@@ -38,24 +37,24 @@
                 </ItemsPanelTemplate>
             </Menu.ItemsPanel>
             <MenuItem Header=" Resursi" ToolTip="Prikaz svih opcija za manipulisanje resursima">
-                <MenuItem Header=" Dodaj" ToolTip="Dodavanje novog resursa" Command="cmd:RoutedCommands.AddResource" InputGestureText="Ctrl+R">
+                <MenuItem Header=" Dodaj" ToolTip="Dodavanje novog resursa" Command="cmd:RoutedCommands.AddResource" InputGestureText="Ctrl+A">
                     <MenuItem.Icon>
                         <Image Source="Icons\AddIcon.png" Width="12" Height="12"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator></Separator>
-                <MenuItem Header=" Prikazi" ToolTip="Prikaz svih resursa" Command="cmd:RoutedCommands.ShowResources" InputGestureText="Alt+R">
+                <MenuItem Header=" Prikazi" ToolTip="Prikaz svih resursa" Command="cmd:RoutedCommands.ShowResources" InputGestureText="Alt+B">
                     <MenuItem.Icon>
                         <Image Source="Icons\TableIcon.png" Width="12" Height="12"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="Izmeni" ToolTip="Izmena resursa" Command="cmd:RoutedCommands.EditResources" InputGestureText="Ctrl+A">
+                <MenuItem Header="Izmeni" ToolTip="Izmena resursa" Command="cmd:RoutedCommands.EditResources" InputGestureText="Ctrl+C">
                     <MenuItem.Icon>
                         <Image Source="Icons\EditIcon.png" Width="12" Height="12"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator></Separator>
-                <MenuItem Header="Obrisi" ToolTip="Brisanje resursa" Command="cmd:RoutedCommands.DeleteResources" InputGestureText="Ctrl+B">
+                <MenuItem Header="Obrisi" ToolTip="Brisanje resursa" Command="cmd:RoutedCommands.DeleteResources" InputGestureText="Ctrl+D">
                     <MenuItem.Icon>
                         <Image Source="Icons\DeleteIcon.png" Width="12" Height="12"/>
                     </MenuItem.Icon>
@@ -66,24 +65,24 @@
 
 
             <MenuItem Header=" Tipovi resursa" ToolTip="Prikaz svih opcija za manipulisanje tipovima resursa">
-                <MenuItem Header=" Dodaj" ToolTip="Dodavanje novog tipa resursa" Command="cmd:RoutedCommands.AddType" InputGestureText="Ctrl+T">
+                <MenuItem Header=" Dodaj" ToolTip="Dodavanje novog tipa resursa" Command="cmd:RoutedCommands.AddType" InputGestureText="Alt+A">
                     <MenuItem.Icon>
                         <Image Source="Icons\AddIcon.png" Width="12" Height="12"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator></Separator>
-                <MenuItem Header=" Prikazi" ToolTip="Prikaz svih tipova resursa" Command="cmd:RoutedCommands.ShowTypes" InputGestureText="Alt+T">
+                <MenuItem Header=" Prikazi" ToolTip="Prikaz svih tipova resursa" Command="cmd:RoutedCommands.ShowTypes" InputGestureText="Alt+B">
                     <MenuItem.Icon>
                         <Image Source="Icons\TableIcon.png" Width="12" Height="12"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="Izmeni" ToolTip="Izmena tipova resursa" Command="cmd:RoutedCommands.EditTypes" InputGestureText="Ctrl+T">
+                <MenuItem Header="Izmeni" ToolTip="Izmena tipova resursa" Command="cmd:RoutedCommands.EditTypes" InputGestureText="Alt+C">
                     <MenuItem.Icon>
                         <Image Source="Icons\EditIcon.png" Width="12" Height="12"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator></Separator>
-                <MenuItem Header="Obrisi" ToolTip="Brisanje tipova resursa" Command="cmd:RoutedCommands.DeleteTypes" InputGestureText="Ctrl+T">
+                <MenuItem Header="Obrisi" ToolTip="Brisanje tipova resursa" Command="cmd:RoutedCommands.DeleteTypes" InputGestureText="Alt+D">
                     <MenuItem.Icon>
                         <Image Source="Icons\DeleteIcon.png" Width="12" Height="12"/>
                     </MenuItem.Icon>
@@ -97,18 +96,18 @@
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator></Separator>
-                <MenuItem Header="Prikaži" ToolTip="Prikaz svih etiketa" Command="cmd:RoutedCommands.ShowTags" InputGestureText="Alt+E">
+                <MenuItem Header="Prikaži" ToolTip="Prikaz svih etiketa" Command="cmd:RoutedCommands.ShowTags" InputGestureText="Ctrl+F">
                     <MenuItem.Icon>
                         <Image Source="Icons\TableIcon.png" Width="12" Height="12"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="Uredi" ToolTip="Izmena etiketa" Command="cmd:RoutedCommands.EditTags" InputGestureText="Alt+E">
+                <MenuItem Header="Uredi" ToolTip="Izmena etiketa" Command="cmd:RoutedCommands.EditTags" InputGestureText="Ctrl+G">
                     <MenuItem.Icon>
                         <Image Source="Icons\EditIcon.png" Width="12" Height="12"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator></Separator>
-                <MenuItem Header="Obrisi" ToolTip="Brisanje etiketa" Command="cmd:RoutedCommands.DeleteTags" InputGestureText="Alt+E">
+                <MenuItem Header="Obrisi" ToolTip="Brisanje etiketa" Command="cmd:RoutedCommands.DeleteTags" InputGestureText="Ctrl+H">
                     <MenuItem.Icon>
                         <Image Source="Icons\DeleteIcon.png" Width="12" Height="12"/>
                     </MenuItem.Icon>
@@ -148,31 +147,43 @@
                 </MenuItem>
                 <Separator></Separator>
             </MenuItem>
-
-                <MenuItem Header=" Pomoć" ToolTip="Prikaz pomoćne dokumentacije" HorizontalAlignment="Left">
-                    <MenuItem Header="_Dokumentacija" InputGestureText="F1" Click="Help_Click">
-                        <MenuItem.Icon>
-                            <Image Source="Icons\DocumentIcon.png" Width="12" Height="12"/>
-                        </MenuItem.Icon>
-                        <MenuItem.ToolTip>
-                            <StackPanel Orientation="Horizontal">
-                                <Image Margin="5" Source="Icons/fancy.png"></Image>
-                                <TextBlock Margin="5" TextWrapping="Wrap" MaxWidth="100">
+            <MenuItem Header=" Pomoć" ToolTip="Prikaz pomoćne dokumentacije" HorizontalAlignment="Left">
+                <MenuItem Header="_Dokumentacija" InputGestureText="F1" Click="Help_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Icons\DocumentIcon.png" Width="12" Height="12"/>
+                    </MenuItem.Icon>
+                    <MenuItem.ToolTip>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Margin="5" Source="Icons/fancy.png"></Image>
+                            <TextBlock Margin="5" TextWrapping="Wrap" MaxWidth="100">
                         Korisnička pomoć organizovana je u vidu uputstva za upotrebu aplikacije i demo videa. 
                                 Izborom ponuđene pomoći korisnik se bolje upoznaje se
                                     funkcionisanjem aplikacije.
-                                </TextBlock>
-                            </StackPanel>
-                        </MenuItem.ToolTip>
-                    </MenuItem>
-                    <MenuItem Name="Demo" Header="_Demo mod" Click="Demo_Click">
-                        <MenuItem.Icon>
-                            <Image Source="Icons\DemoTapeIcon.png" Width="12" Height="12"/>
-                        </MenuItem.Icon>
-                    </MenuItem>
+                            </TextBlock>
+                        </StackPanel>
+                    </MenuItem.ToolTip>
                 </MenuItem>
-
-            </Menu>
+                <MenuItem Name="Demo" Header="_Demo mod" Click="Demo_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Icons\DemoTapeIcon.png" Width="12" Height="12"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <!-- 
+        <MenuItem Header=" Pomoć" ToolTip="Prikaz pomoćne dokumentacije" HorizontalAlignment="Right">
+            <MenuItem Header="_Dokumentacija" InputGestureText="F1" Click="Help_Click">
+                <MenuItem.Icon>
+                    <Image Source="Icons\document.png" Width="12" Height="12"/>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Name="Demo" Header="_Demo mod" Click="Demo_Click">
+                <MenuItem.Icon>
+                    <Image Source="Icons\demo_play.png" Width="12" Height="12"/>
+                </MenuItem.Icon>
+            </MenuItem>
+        </MenuItem>
+        -->
+        </Menu>
 
         <Grid>
             <Grid.ColumnDefinitions>
@@ -215,5 +226,4 @@
             </Canvas>
         </Grid>
     </DockPanel>
-    </ScrollViewer>
 </Window>

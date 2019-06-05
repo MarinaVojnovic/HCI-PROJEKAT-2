@@ -58,6 +58,7 @@ namespace ResourcesApplication
         private bool nameError;
         private bool descriptionError;
         private bool publicError;
+        private bool priceError;
         public AddResource(TempWindow t)
         {
             tw = t;
@@ -82,6 +83,7 @@ namespace ResourcesApplication
             nameError = false;
             descriptionError = false;
             publicError = false;
+            priceError = false;
         }
 
         private void buttonSave_Click(object sender, RoutedEventArgs e)
@@ -105,7 +107,7 @@ namespace ResourcesApplication
             if (idError == false &&
                 nameError == false &&
                 descriptionError == false &&
-                publicError == false)
+                publicError == false && priceError == false)
             {
                 resource.Type = tw.database.GetType(autoCompleteBoxTypes.Text);
 
@@ -132,7 +134,11 @@ namespace ResourcesApplication
             }
 
         }
-
+        private void textBoxPrice_Error(object sender, ValidationErrorEventArgs e)
+        {
+            if (e.Action == ValidationErrorEventAction.Added)
+                priceError = true;
+        }
         private void buttonCancel_Click(object sender, RoutedEventArgs e)
         {
             Close();

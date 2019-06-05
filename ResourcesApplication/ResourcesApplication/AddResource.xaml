@@ -10,7 +10,7 @@
         xmlns:toolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"
         Title="Dodavanje resursa" Height="550
         " Width="800">
-    
+
     <Grid Background="LightGray">
         <Grid.RowDefinitions>
             <RowDefinition Height="42*" />
@@ -79,15 +79,34 @@
             </TextBox>
 
             <Label Grid.Column="0" Grid.Row="1" Content="Cena:" />
-            <TextBox Name="textBoxPrice" MaxLength="55"  TextChanged="textBoxPrice_TextChanged" ToolTip="Unos cene resursa po jedinici mere" Grid.Column="1" Grid.Row="1" VerticalContentAlignment="Center" Margin="3" >
+            <TextBox Name="textBoxPrice" Validation.Error="textBoxPrice_Error" MaxLength="55"  TextChanged="textBoxPrice_TextChanged" ToolTip="Unos cene resursa po jedinici mere" Grid.Column="1" Grid.Row="1" VerticalContentAlignment="Center" Margin="3" >
                 <TextBox.Text>
                     <Binding Path="Price" UpdateSourceTrigger="LostFocus" NotifyOnValidationError="True">
                         <Binding.ValidationRules>
 
-
+                            <validation:NumberValidation ValidationStep="RawProposedValue" />
                         </Binding.ValidationRules>
                     </Binding>
                 </TextBox.Text>
+
+
+                <Validation.ErrorTemplate>
+                    <ControlTemplate>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="200" />
+                            </Grid.ColumnDefinitions>
+
+                            <AdornedElementPlaceholder Grid.Column="0" Grid.Row="0" x:Name="textBox"/>
+                            <TextBlock TextWrapping="Wrap" Grid.Column="1" Grid.Row="1" Text="{Binding [0].ErrorContent}" Foreground="Red"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Validation.ErrorTemplate>
+
 
             </TextBox>
 
@@ -223,5 +242,5 @@
 
         <TextBlock x:Name="textBoxTypeError" Grid.Column="4" HorizontalAlignment="Left" TextWrapping="Wrap" Width="200" Visibility="Hidden" Text="Molimo da unesite naziv postojećeg ili dodajte novi tip resursa" Foreground="Red" VerticalAlignment="Top" Margin="5,16,0,0" Grid.Row="1" Height="32"/>
     </Grid>
-   
+
 </Window>

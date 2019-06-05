@@ -265,7 +265,10 @@ namespace ResourcesApplication.Beans
                 {
                     if (name.Equals(Resources[i].Name))
                     {
-                        send.Add(Resources[i]);
+                        if (Resources[i].X != -1 && Resources[i].Y != -1)
+                        {
+                            send.Add(Resources[i]);
+                        }
                     }
                 }
             }
@@ -282,7 +285,10 @@ namespace ResourcesApplication.Beans
                 {
                     if (type.Equals(Resources[i].Type.Id))
                     {
-                        send.Add(Resources[i]);
+                        if (Resources[i].X != -1 && Resources[i].Y != -1)
+                        {
+                            send.Add(Resources[i]);
+                        }
                     }
                 }
             }
@@ -299,7 +305,11 @@ namespace ResourcesApplication.Beans
                 {
                     if (rt.Id.Equals(tag))
                     {
-                        send.Add(Resources[i]);
+                        if (Resources[i].X != -1 && Resources[i].Y != -1)
+                        {
+                            send.Add(Resources[i]);
+                        }
+
                     }
                 }
             }
@@ -307,20 +317,127 @@ namespace ResourcesApplication.Beans
             return send;
         }
 
-        public List<Resource> filter(string tag)
+        public List<Resource> filter(List<string> krit)
         {
             List<Resource> send = new List<Resource>();
-            for (int i = 0; i < Resources.Count; i++)
+            foreach (Resource r in Resources)
             {
-                foreach (ResourceTag rt in Resources[i].Tags)
+                bool added = false;
+                foreach (string s in krit)
                 {
-                    if (rt.Id.Equals(tag))
+                    if (s.Equals("obnovljiv") && r.Renewable == true)
                     {
-                        send.Add(Resources[i]);
+                        if (added == false)
+                        {
+                            if (r.X != -1 && r.Y != -1)
+                            {
+                                send.Add(r);
+                                added = true;
+                            }
+                        }
+                    }
+                    if (s.Equals("vazan") && r.Importance == true)
+                    {
+                        if (added == false)
+                        {
+                            if (r.X != -1 && r.Y != -1)
+                            {
+                                send.Add(r);
+                                added = true;
+                            }
+                        }
+                    }
+                    if (s.Equals("exp") && r.AbleToExploate == true)
+                    {
+                        if (added == false)
+                        {
+                            if (r.X != -1 && r.Y != -1)
+                            {
+                                send.Add(r);
+                                added = true;
+                            }
+                        }
+                    }
+                    if (s.Equals("merica") && r.MeasurementUnit == "Merica")
+                    {
+                        if (added == false)
+                        {
+                            if (r.X != -1 && r.Y != -1)
+                            {
+                                send.Add(r);
+                                added = true;
+                            }
+                        }
+                    }
+                    if (s.Equals("tona") && r.MeasurementUnit == "Tona")
+                    {
+                        if (added == false)
+                        {
+                            if (r.X != -1 && r.Y != -1)
+                            {
+                                send.Add(r);
+                                added = true;
+                            }
+                        }
+                    }
+                    if (s.Equals("kilogram") && r.MeasurementUnit == "Kilogram")
+                    {
+                        if (added == false)
+                        {
+                            if (r.X != -1 && r.Y != -1)
+                            {
+                                send.Add(r);
+                                added = true;
+                            }
+                        }
+                    }
+                    if (s.Equals("barel") && r.MeasurementUnit == "Barel")
+                    {
+                        if (added == false)
+                        {
+                            if (r.X != -1 && r.Y != -1)
+                            {
+                                send.Add(r);
+                                added = true;
+                            }
+                        }
+                    }
+                    if (s.Equals("redak") && r.Frequency == "Redak")
+                    {
+                        if (added == false)
+                        {
+                            if (r.X != -1 && r.Y != -1)
+                            {
+                                send.Add(r);
+                                added = true;
+                            }
+                        }
+                    }
+                    if (s.Equals("cest") && r.Frequency == "Cest")
+                    {
+                        if (added == false)
+                        {
+                            if (r.X != -1 && r.Y != -1)
+                            {
+                                send.Add(r);
+                                added = true;
+                            }
+                        }
+
+                    }
+                    if (s.Equals("univerzalan") && r.Frequency == "Univerzalan")
+                    {
+                        if (added == false)
+                        {
+                            if (r.X != -1 && r.Y != -1)
+                            {
+                                send.Add(r);
+                                added = true;
+                            }
+                        }
                     }
                 }
             }
-
             return send;
         }
     }

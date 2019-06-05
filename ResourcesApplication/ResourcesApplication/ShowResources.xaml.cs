@@ -187,7 +187,7 @@ namespace ResourcesApplication
 
             foreach (var data in resources)
             {
-                if (data.Name.Contains(searchInputName.Text) && value == true)
+                if (data.Name.ToUpper().Contains(searchInputName.Text.ToUpper()) && value == true)
                 {
                     replace.Add(new Resource(data));
                 }
